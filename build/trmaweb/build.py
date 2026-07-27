@@ -42,7 +42,10 @@ def main() :
            content[fn[:-5]] = txt
         elif fn.endswith(".py") :
            data = {}
-           six.exec_(txt,data)
+           try:
+              six.exec_(txt,data)
+           except:
+              breakpoint()
            for tn, ctx in iteritems(data.get('context',{})) :
                dynamic.setdefault(tn,{}).update(ctx)
 

@@ -119,15 +119,37 @@ context = {
         '''),
         ('''
           <div style="float:left;margin:8px">
-          <img src="assets/images/History/scotthall.jpg" alt="" width="108"
+          <img src="assets/images/History/clements.jpg" alt="" width="108"
                class="img-responsive img-thumbnail" >
           </div>
+          <span style="text-align:center; font-size: large; font-weight: bold">
+          Mr. Frank Clements
+          </span> 
+          <br/><br/>
+          <p/>
+         <p>
+         Mr. Frank Clements began training with Master Eric Heintz in February 1995 and
+         tested for his black belt in December 1997. He continued with Two Rivers and earned
+         his 2nd dan black belt in 2000.  Mr. Clements taught briefly at the Hub before
+         becoming the Carlisle instructor for several years.
+         </p>
+         <div style="clear: both"></div>
+         ''',
+         '''
+        August 13th, 2025
+        (<a href="https://www.dignitymemorial.com/obituaries/ankeny-ia/frank-clements-ii-12487388">obituary</a>)
+         '''
+        ),
+        ('''
+          <div style="float:left;margin:8px">
+          <img src="assets/images/History/scotthall.jpg" alt="" width="108"
+               class="img-responsive img-thumbnail" >
           </div>
           <span style="text-align:center; font-size: large; font-weight: bold">
           Mr. Scott Hall
           </span> 
           <br/><br/>
-          <p>
+          <p/>
           Dr. Scott Hall earned his black belt at the Eric Heintz Black Belt Academy.
           After Master Heintz retired, Dr. Hall trained with Two Rivers Martial Arts
           earning his 2nd and 3rd dan black belts.  When Grandmaster Jung asked that
@@ -148,7 +170,6 @@ context = {
           <div style="float:left;margin:8px">
           <img src="assets/images/History/beard.jpg" alt="" width="108"
                class="img-responsive img-thumbnail" >
-          </div>
           </div>
           <span style="text-align:center; font-size: large; font-weight: bold">
           Mr. Ed Beard
