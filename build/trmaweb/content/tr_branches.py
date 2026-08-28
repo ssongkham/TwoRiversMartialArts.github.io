@@ -41,7 +41,7 @@ BRANCHES = [
 
   { 'key': 'carlisle', 'name': 'Carlisle', 'short': 'Carlisle', 'town': 'Carlisle',
     'addr': ['Carlisle Community Building', '35 Vine Street, Carlisle, Iowa 50047'],
-    'phone': '(515) 423-0804', 'email': 'carlisle@tworiversmartialarts.com',
+    'phone': None, 'email': 'carlisle@tworiversmartialarts.com',
     'price': 25, 'page': 'location-carlisle.html', 'status': None,
     'summary': ['Mon &amp; Wed 6:30 &ndash; 7:30 pm'],
     'sched': [('Monday', '6:30 &ndash; 7:30 pm', ''),
@@ -50,7 +50,7 @@ BRANCHES = [
 
   { 'key': 'winterset', 'name': 'Winterset', 'short': 'Winterset', 'town': 'Winterset',
     'addr': ['404 South 2nd Avenue', 'Winterset, Iowa 50273'],
-    'phone': '(515) 423-0804', 'email': 'winterset@tworiversmartialarts.com',
+    'phone': None, 'email': 'winterset@tworiversmartialarts.com',
     'price': 25, 'page': 'location-winterset.html', 'status': None,
     'summary': ['Mon &amp; Wed 7:00 &ndash; 8:00 pm'],
     'sched': [('Monday', '7:00 &ndash; 8:00 pm', ''),

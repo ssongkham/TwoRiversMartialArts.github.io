@@ -15,6 +15,19 @@ context = {
     'PAGE_DESC': 'How to start Tae Kwon Do at Two Rivers: your first class is free, what to '
                  'wear, what a class is like, and what it costs &mdash; from $25 a month.' },
 
+  'history-trma.html': { 'TR_ACTIVE': 'about',
+    'PAGE_DESC': 'About Two Rivers Martial Arts &mdash; a nonprofit Tae Kwon Do school run by '
+                 'its own students, founded in 1998 by the black belts of the Eric Heintz Black '
+                 'Belt Academy.' },
+
+  'contact.html': { 'TR_ACTIVE': '',
+    'PAGE_DESC': 'Contact Two Rivers Martial Arts &mdash; branch emails and phone numbers for '
+                 'all six central Iowa locations, plus the Des Moines business office.' },
+
+  'resources.html': { 'TR_ACTIVE': 'resources',
+    'PAGE_DESC': 'Reference material for Two Rivers students: the tenets, Korean terminology, '
+                 'forms, belts, dress code, test schedule, and the photo and video archive.' },
+
   'resource-tenets.html': { 'TR_ACTIVE': 'resources',
     'PAGE_DESC': 'Courtesy, Integrity, Perseverance, Self-Control and Indomitable Spirit &mdash; '
                  'the five tenets of Tae Kwon Do, in full.' },
