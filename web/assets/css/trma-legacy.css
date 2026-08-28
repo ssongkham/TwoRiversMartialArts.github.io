@@ -1,0 +1,190 @@
+/* ==========================================================================
+   Bridge: legacy page bodies under the 2026 chrome.
+   Loaded AFTER style.css, so it wins. Changes type, colour and decoration
+   only — never layout — so existing content keeps its structure exactly.
+   ========================================================================== */
+
+/* ------------------------------------------------------------- typography */
+body.tr .left-content,
+body.tr .right-content,
+body.tr .weapon,
+body.tr .offer-content,
+body.tr .instructor-detail,
+body.tr .contact-form,
+body.tr .philosophy-content {
+  font-family: var(--tr-body);
+  color: var(--tr-ink-2);
+}
+
+body.tr main h1, body.tr main h2, body.tr main h3,
+body.tr main h4, body.tr main h5, body.tr main h6 {
+  font-family: var(--tr-display);
+  color: var(--tr-ink);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+body.tr main h1 { font-size: 38px; line-height: 1.12; }
+body.tr main h2 { font-size: 30px; line-height: 1.15; }
+body.tr main h3 { font-size: 23px; line-height: 1.2; }
+body.tr main h4 { font-size: 19px; }
+body.tr main h5 { font-size: 17px; }
+
+body.tr main p, body.tr main li, body.tr main td,
+body.tr main th, body.tr main dd, body.tr main dt {
+  font-family: var(--tr-body);
+  color: var(--tr-ink-2);
+}
+body.tr main p { font-size: 16.5px; line-height: 1.7; }
+
+body.tr main .heading h2, body.tr main .heading h5 { text-transform: none; }
+body.tr main .heading h5 { font-family: var(--tr-mono); font-size: 12px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--tr-red); font-weight: 400; }
+
+/* ------------------------------------------------------------------ links */
+body.tr main p a, body.tr main li a, body.tr main td a,
+body.tr main .title a, body.tr main .left-content a { color: var(--tr-blue); }
+body.tr main p a:hover, body.tr main li a:hover, body.tr main td a:hover,
+body.tr main .title a:hover, body.tr main .left-content a:hover { color: var(--tr-blue-dark); }
+
+/* ---------------------------------------------------------- side navigation */
+body.tr .sidebar-left {
+  background-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+  padding: 0;
+}
+body.tr .sidebar-left .nav-sideleft {
+  background: transparent;
+  border-top: 2px solid var(--tr-ink);
+  padding: 0;
+  margin-bottom: 30px;
+  list-style: none;
+}
+body.tr .sidebar-left .nav-sideleft > div {
+  background: transparent; border: 0; margin: 0; padding: 0; box-shadow: none;
+}
+body.tr .sidebar-left .nav-sideleft a {
+  display: block;
+  height: auto;
+  width: 100%;
+  min-height: 48px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--tr-rule);
+  background: transparent;
+  background-color: transparent;
+  color: var(--tr-ink);
+  font-family: var(--tr-body);
+  font-size: 15.5px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  text-align: left;
+  text-decoration: none;
+}
+body.tr .sidebar-left .nav-sideleft a:hover {
+  background: transparent;
+  background-color: transparent;
+  color: var(--tr-blue);
+}
+body.tr .sidebar-left .nav-sideleft .active,
+body.tr .sidebar-left .nav-sideleft a.active {
+  background: transparent;
+  background-color: transparent;
+  color: var(--tr-blue);
+  font-weight: 500;
+}
+body.tr .sidebar-left .nav-sideleft .active:before { display: none; content: none; }
+
+/* ---------------------------------------------------------------- buttons */
+body.tr .btn, body.tr .btn-primary, body.tr .btn-outline {
+  font-family: var(--tr-body);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  border-radius: 0;
+  padding: 13px 24px;
+  background: var(--tr-ink);
+  border: 1px solid var(--tr-ink);
+  color: #FFFFFF;
+  box-shadow: none;
+}
+body.tr .btn:hover, body.tr .btn-primary:hover, body.tr .btn-outline:hover {
+  background: #000000; border-color: #000000; color: #FFFFFF;
+}
+body.tr .btn-outline {
+  background: transparent; color: var(--tr-ink); border-color: var(--tr-rule);
+}
+body.tr .btn-outline:hover { background: var(--tr-shade); color: var(--tr-ink); border-color: var(--tr-ink); }
+
+/* ------------------------------------------------------------------ cards */
+body.tr .card, body.tr .panel-area {
+  border: 1px solid var(--tr-rule);
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--tr-paper);
+}
+body.tr .card-body { padding: 22px 24px; }
+body.tr .card-price { font-family: var(--tr-display); color: var(--tr-ink); }
+
+/* ----------------------------------------------------------------- alerts */
+body.tr .alert {
+  border-radius: 0;
+  border: 1px solid var(--tr-rule);
+  background: var(--tr-shade);
+  color: var(--tr-ink-2);
+}
+body.tr .alert-info { background: var(--tr-shade); border-color: var(--tr-rule); }
+body.tr .alert-warning { background: var(--tr-red-tint); border-color: transparent; color: var(--tr-red); }
+body.tr .alert-warning p, body.tr .alert-warning a { color: var(--tr-red); }
+
+/* ----------------------------------------------------------------- tables */
+body.tr table { border-collapse: collapse; }
+body.tr table td, body.tr table th { border-color: var(--tr-rule-2); }
+body.tr .table thead th { border-bottom: 1px solid var(--tr-rule); font-family: var(--tr-mono);
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tr-ink-3); font-weight: 500; }
+
+/* ------------------------------------------------------- schedules + notes */
+body.tr .location-schedule h3,
+body.tr .trma-loc-sched strong { font-family: var(--tr-display); color: var(--tr-ink); }
+body.tr .trma-loc-sched, body.tr .notes li { font-variant-numeric: tabular-nums; }
+body.tr ul.notes { list-style: none; padding-left: 0; }
+
+/* --------------------------------------------------- images and decoration */
+body.tr .img-thumbnail {
+  border: 1px solid var(--tr-rule);
+  border-radius: 0;
+  padding: 4px;
+  background: var(--tr-paper);
+}
+body.tr .res-tenets h3 { margin-top: 26px; }
+body.tr .wrapper-content { box-shadow: none; }
+
+/* legacy chrome that layout2 replaces — make sure none of it can reappear */
+body.tr .top-area, body.tr .navigation, body.tr .footer-bs,
+body.tr .banner-background, body.tr .back-to-top { display: none !important; }
+
+/* the legacy grid keeps its container width in step with the new one */
+body.tr .container { max-width: var(--tr-max); padding-left: var(--tr-pad); padding-right: var(--tr-pad); }
+@media (max-width: 1080px) { body.tr .container { max-width: 100%; } }
+
+/* Wide legacy tables must not push the page sideways on a phone. Below the
+   tablet breakpoint the table itself becomes the scroll container, so the
+   layout is untouched on desktop. */
+@media (max-width: 860px) {
+  body.tr main table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  body.tr main img { max-width: 100%; height: auto; }
+  body.tr main pre { overflow-x: auto; }
+}
+
+/* Flex items default to min-width:auto, which stops them shrinking below their
+   content's intrinsic width — a wide table then pushes the whole page sideways.
+   Bootstrap's .row is a flex container, so let its children shrink. */
+body.tr main .row > * { min-width: 0; }

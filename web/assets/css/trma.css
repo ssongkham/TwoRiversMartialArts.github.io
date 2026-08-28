@@ -264,6 +264,15 @@ body.tr {
 .tr-readon { display: flex; flex-direction: column; gap: 0; margin-top: 12px; }
 .tr-readon a { padding: 12px 0; border-bottom: 1px solid var(--tr-rule); font-size: 15.5px; }
 
+/* --------------------------------------------------------------- pagehead */
+.tr-pagehead { padding-top: 56px; padding-bottom: 8px; }
+.tr-pagehead h1 {
+  font-family: var(--tr-display); font-weight: 500;
+  font-size: clamp(32px, 4vw, 48px); line-height: 1.06;
+  letter-spacing: -0.015em; color: var(--tr-ink); margin: 10px 0 0;
+  max-width: 22ch; text-wrap: balance;
+}
+
 /* ------------------------------------------------------------- responsive */
 @media (max-width: 1080px) {
   body.tr { --tr-pad: 32px; }

@@ -104,6 +104,36 @@
       </div>
     </div>
 
+    <!-- paying -->
+    <div class="tr-section">
+      <div class="tr-wrap">
+        <div style="max-width: 62ch; margin-bottom: 26px;">
+          <h2>How to pay</h2>
+          <div class="tr-prose" style="margin-top: 14px;">
+            <p>Dues are paid to your own branch. You can hand cash or a cheque to your
+              instructor, or pay online by card or PayPal &mdash; either a single month or a
+              monthly subscription. Uniforms are ordered from the same place.</p>
+          </div>
+        </div>
+        <div class="tr-cards tr-cards--3">
+          {% for b in BRANCHES %}
+          <div class="tr-card">
+            <div class="tr-card__top">
+              <h3><a href="{{ b['page'] }}#paybuttons">Pay at {{ b['short'] }}</a></h3>
+              <span class="tr-price">${{ b['price'] }}/mo</span>
+            </div>
+            <p class="tr-where">{{ b['town'] }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        <p style="margin-top: 22px; font-size: 15px; line-height: 1.6; color: #4A4A4F;">
+          Black belts paying annual dues use the
+          <a href={{linkto("dues.html")}}>black belt dues page</a> instead.
+          To support the club rather than pay dues, see
+          <a href={{linkto("donation.html")}}>donations</a>.</p>
+      </div>
+    </div>
+
     <!-- what a class is like -->
     <div class="tr-section">
       <div class="tr-wrap">
