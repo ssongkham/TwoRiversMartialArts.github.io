@@ -291,7 +291,10 @@ body.tr {
 }
 
 /* --------------------------------------------------------------- pagehead */
-.tr-pagehead { padding-top: 56px; padding-bottom: 8px; }
+.tr-pagehead { padding-top: 56px; padding-bottom: 30px; }
+/* legacy wrappers carry their own top margin (.instructor-detail is 3em), so the
+   gap under the heading varied by page. Normalise it here. */
+.tr-pagehead + * { margin-top: 0 !important; }
 .tr-pagehead h1 {
   font-family: var(--tr-display); font-weight: 500;
   font-size: clamp(32px, 4vw, 48px); line-height: 1.06;

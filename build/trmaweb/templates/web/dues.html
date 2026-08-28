@@ -4,23 +4,21 @@
 
 {% block content %}
 
-    <!-- End: Banner Background -->
-
-Annual Black belt dues for the year 2022 and after are $200, for up to three black belts in a family.
-
-    <!-- Start: Slider Section -->
     <div class="instructor-detail">
         <div class="container-fluid">
             <div class="row">
-                <!-- 
-                {{ program_sidenav }}
-                -->
-                <!-- begin main content row -->
+                {# side navigation intentionally not shown on this page #}
+                <div class="col-md-8">
+                    <p>Annual Black belt dues for the year 2022 and after are $200, for up to
+                       three black belts in a family.</p>
+
+                    <div class="tr-payform">
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="MPKEWR9X4FAZQ">
 <table>
-<tr><td><input type="hidden" name="on0" value="Family size">Family size</td></tr><tr><td><select name="os0">
+<tr><td><label for="dues-family-size">Family size</label></td></tr>
+<tr><td><select name="os0" id="dues-family-size">
 	<option value="One black belt - 2021">One black belt - 2021 $150.00 USD</option>
 	<option value="One black belt - 2022+">One black belt - 2022+ $200.00 USD</option>
 	<option value="Two black belts - 2021">Two black belts - 2021 $300.00 USD</option>
@@ -29,11 +27,18 @@ Annual Black belt dues for the year 2022 and after are $200, for up to three bla
 	<option value="Three black belts - 2022+">Three black belts - 2022+ $600.00 USD</option>
 </select> </td></tr>
 </table>
+<input type="hidden" name="on0" value="Family size">
 <input type="hidden" name="currency_code" value="USD">
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
-                <!-- end main content row -->
+                    </div>
+
+                    <p style="margin-top: 26px;">Paying monthly branch dues instead? Those are
+                       handled at <a href="classes.html">your own branch</a>.</p>
+                </div>
             </div>
-        <!-- End: Slider Section -->
+        </div>
+    </div>
+
 {% endblock %}

@@ -15,7 +15,8 @@ def paypal_buttons(nm, subsc, month, prices):
     return '''
      <div class="row">
      <!-- Subscribe BUTTON -->
-     <div class="col-md-5 paypal-button">
+     <div class="col-md-4 paypal-button">
+     <div class="tr-paycard">
      <h3>Recurring Charge Monthly Class Fee (%(nm)s)</h3>
 
      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -35,10 +36,11 @@ def paypal_buttons(nm, subsc, month, prices):
      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribe_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
      </form>
-     
+     </div>
                                 </div>
                               <!-- Class fee BUTTON -->
                               <div class="col-md-4 paypal-button">
+                                <div class="tr-paycard">
                                 <h3>One Time Charge Monthly Class Fees (%(nm)s)</h3>
      
      <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -59,8 +61,10 @@ def paypal_buttons(nm, subsc, month, prices):
      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
      </form>
       </div>
+      </div>
        <!-- Uniform BUTTON -->
      <div class="col-md-4 paypal-button">
+     <div class="tr-paycard">
      <h3>Uniform and patch</h3>
      <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
       <input type="hidden" name="cmd" value="_s-xclick">
@@ -77,6 +81,7 @@ def paypal_buttons(nm, subsc, month, prices):
       <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
       <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
       </form>
+     </div>
      </div>
      </div>
      <br/><br/>
