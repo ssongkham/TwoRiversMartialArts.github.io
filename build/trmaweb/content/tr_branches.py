@@ -4,6 +4,9 @@ summary cards, the Classes & Locations page and the dues table.
 Schedules and prices mirror schedule.py / prices.py.
 '''
 
+import math
+import re
+
 BRANCHES = [
   { 'key': 'hub', 'name': 'Hub &mdash; Des Moines', 'short': 'Hub', 'town': 'Des Moines',
     'addr': ['2017 Southlawn Drive, Suite D', 'Des Moines, Iowa 50315'],
@@ -76,12 +79,26 @@ DUES_TIERS = [
   { 'label': 'Hub &middot; Clive/WDM &middot; Indianola',   'prices': [30, 50, 65, 75, 85] },
 ]
 
+def _tel(phone):
+    '''(515) 423-0804 -> +15154230804, so tel: links actually dial.'''
+    if not phone:
+        return None
+    digits = re.sub(r'\D', '', phone)
+    return '+1' + digits if len(digits) == 10 else '+' + digits
+
+for _b in BRANCHES:
+    _b['tel'] = _tel(_b['phone'])
+
 def _per_person():
-    '''Range of per-person cost at each family size, across the two tiers.'''
+    '''Range of per-person cost at each family size, across the two tiers.
+
+    Rounds half UP: round() is banker's rounding, so $45 split two ways
+    (22.50) came out as $22 and understated the price.
+    '''
     out = []
     for i in range(5):
         vals = sorted(t['prices'][i] / float(i + 1) for t in DUES_TIERS)
-        lo, hi = int(round(vals[0])), int(round(vals[-1]))
+        lo, hi = (int(math.floor(v + 0.5)) for v in (vals[0], vals[-1]))
         out.append('$%d' % lo if lo == hi else '$%d&ndash;%d' % (lo, hi))
     return out
 

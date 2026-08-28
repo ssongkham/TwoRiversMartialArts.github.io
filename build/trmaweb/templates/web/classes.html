@@ -71,8 +71,8 @@
                 <h3><a href={{linkto(b['page'])}}>{{ b['name'] }}</a></h3>
                 {% if b['status'] %}<p class="tr-flag" style="margin: 0 0 10px;">{{ b['status'] }}</p>{% endif %}
                 <p class="tr-addr">{% for line in b['addr'] %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
-                {% if b['phone'] %}<p class="tr-addr"><a href="tel:{{ b['phone'] }}">{{ b['phone'] }}</a></p>
-                {% else %}<p class="tr-addr">Business office <a href="tel:(515) 423-0804">(515) 423-0804</a></p>{% endif %}
+                {% if b['phone'] %}<p class="tr-addr"><a href="tel:{{ b['tel'] }}">{{ b['phone'] }}</a></p>
+                {% else %}<p class="tr-addr">Main branch <a href="tel:+15154230804">(515) 423-0804</a></p>{% endif %}
                 <p><a href="mailto:{{ b['email'] }}" style="font-size: 14.5px;">{{ b['email'] }}</a></p>
               </div>
               <div class="tr-c5">

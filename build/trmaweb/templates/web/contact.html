@@ -29,7 +29,7 @@
           <p class="tr-label">By phone</p>
           <p style="margin-top: 12px; font-size: 15.5px; line-height: 1.6; color: #4A4A4F;">
             Hub business office<br>
-            <a href="tel:(515) 285-5049">(515) 285-5049</a></p>
+            <a href="tel:+15152855049">(515) 285-5049</a></p>
         </div>
         <div class="tr-card" style="padding: 30px 32px;">
           <p class="tr-label">Office hours</p>
@@ -58,7 +58,7 @@
               </div>
               <div class="tr-c3">
                 {% if b['phone'] %}
-                <p style="font-size: 15px;"><a href="tel:{{ b['phone'] }}">{{ b['phone'] }}</a></p>
+                <p style="font-size: 15px;"><a href="tel:{{ b['tel'] }}">{{ b['phone'] }}</a></p>
                 {% else %}
                 <p style="font-size: 15px; color: #86868C;">Email, or the business office</p>
                 {% endif %}

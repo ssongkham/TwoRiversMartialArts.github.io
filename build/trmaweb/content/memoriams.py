@@ -126,7 +126,7 @@ context = {
           Mr. Frank Clements
           </span> 
           <br/><br/>
-          <p/>
+          <p>
          <p>
          Mr. Frank Clements began training with Master Eric Heintz in February 1995 and
          tested for his black belt in December 1997. He continued with Two Rivers and earned
@@ -149,7 +149,7 @@ context = {
           Mr. Scott Hall
           </span> 
           <br/><br/>
-          <p/>
+          <p>
           Dr. Scott Hall earned his black belt at the Eric Heintz Black Belt Academy.
           After Master Heintz retired, Dr. Hall trained with Two Rivers Martial Arts
           earning his 2nd and 3rd dan black belts.  When Grandmaster Jung asked that
