@@ -18,3 +18,10 @@ context = {
 'location-winterset.html' : 
     {'LATLNG':'41.331803,-94.015775','BRANCHNAME':'Winterset'},
 }
+
+# Each branch's address box links to Google Maps at the same point the map
+# below it is centred on. Official Maps URL scheme, so it opens the app on a
+# phone and the site on a desktop.
+for _page, _ctx in context.items():
+    _ll = _ctx['LATLNG'].replace(' ', '')
+    _ctx['MAPS_URL'] = 'https://www.google.com/maps/search/?api=1&amp;query=' + _ll

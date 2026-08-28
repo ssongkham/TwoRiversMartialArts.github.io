@@ -340,3 +340,24 @@ body.tr main h1 a:hover, body.tr main h2 a:hover, body.tr main h3 a:hover,
 body.tr main h4 a:hover, body.tr main h5 a:hover, body.tr main h6 a:hover {
   color: var(--tr-blue-hover);
 }
+
+/* --------------------------------------------- branch address -> Google Maps */
+.tr-maplink { display: block; text-decoration: none; }
+.tr-maplink .alert-warning { transition: background-color .12s ease, border-color .12s ease; }
+.tr-maplink:hover .alert-warning,
+.tr-maplink:focus-visible .alert-warning {
+  background: #F0F0EF;
+  border-color: var(--tr-line-strong, var(--tr-ink-3));
+}
+.tr-maplink:focus-visible { outline: 2px solid var(--tr-blue); outline-offset: 2px; }
+body.tr main .tr-maplink p { color: var(--tr-ink-2); }
+.tr-maplink__cue {
+  margin: 10px 0 0;
+  white-space: nowrap;
+  font-family: var(--tr-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tr-blue) !important;
+}
+.tr-maplink:hover .tr-maplink__cue { color: var(--tr-blue-hover) !important; }
