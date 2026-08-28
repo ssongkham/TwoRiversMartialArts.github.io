@@ -156,8 +156,32 @@ body.tr {
 .tr-card--muted { background: var(--tr-shade); }
 .tr-card__top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 4px; }
 .tr-card h3 { font-size: 22px; font-weight: 600; }
+/* A card whose heading is a link is clickable anywhere: the heading carries a
+   visible underline so it reads as a link, and a stretched pseudo-element
+   turns the whole box into the hit area. Only one link per card, so nothing
+   else gets swallowed. Cards without a link are untouched. */
+.tr-card { position: relative; }
 .tr-card h3 a, .tr-branch h3 a { color: var(--tr-ink); }
-.tr-card h3 a:hover, .tr-branch h3 a:hover { color: var(--tr-blue); text-decoration: none; }
+.tr-card h3 a {
+  text-decoration: underline;
+  text-decoration-color: var(--tr-ink-3);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.tr-card h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.tr-card:hover h3 a { color: var(--tr-blue); text-decoration-color: currentColor; }
+.tr-branch h3 a:hover { color: var(--tr-blue); text-decoration: none; }
+
+/* the whole card reacts, so the hit area is obvious before you click */
+.tr-card:has(h3 a):hover { background: var(--tr-shade); }
+.tr-card--muted:has(h3 a):hover { background: #F0F0EF; }
+/* keyboard users get the focus ring on the card, not just the text */
+.tr-card h3 a:focus-visible { outline: none; }
+.tr-card:has(h3 a:focus-visible) { outline: 2px solid var(--tr-blue); outline-offset: 2px; }
 .tr-card .tr-price { font-family: var(--tr-mono); font-size: 13px; color: var(--tr-ink-2); }
 .tr-card .tr-where { font-size: 13.5px; color: var(--tr-ink-3); margin-bottom: 14px; }
 .tr-card .tr-when { font-size: 14.5px; line-height: 1.65; color: var(--tr-ink-2); }
