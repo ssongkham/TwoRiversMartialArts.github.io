@@ -20,6 +20,7 @@ body.tr {
   --tr-red-tint:  #FBE9EA;
   --tr-blue:      #0047A0;
   --tr-blue-dark: #003377;
+  --tr-blue-hover: #0B5FD0;
   --tr-river:     #6E96C8;
 
   --tr-display: "Newsreader", Georgia, "Times New Roman", serif;
@@ -288,6 +289,15 @@ body.tr {
 }
 .tr-readon { display: flex; flex-direction: column; gap: 0; margin-top: 12px; }
 .tr-readon a { padding: 12px 0; border-bottom: 1px solid var(--tr-rule); font-size: 15.5px; }
+
+/* Link lists inside an aside box are already obviously links, sitting in their
+   own panel — an underline on hover just adds noise. Colour alone carries it. */
+.tr-aside a:hover,
+.tr-readon a:hover,
+.tr-aside .tr-links a:hover {
+  text-decoration: none;
+  color: var(--tr-blue-hover);
+}
 
 
 /* ---------------------------------------- the short version, as a wide row */
