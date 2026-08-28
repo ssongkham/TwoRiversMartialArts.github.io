@@ -85,9 +85,9 @@ body.tr {
   display: flex; justify-content: space-between; align-items: center; gap: 40px;
   padding-top: 20px; padding-bottom: 20px;
 }
-.tr-masthead img { height: 40px; width: auto; display: block; }
+.tr-masthead img { height: 58px; width: auto; display: block; }
 .tr-nav { display: flex; gap: 32px; align-items: center; font-size: 15px; font-weight: 500; }
-.tr-nav a { color: var(--tr-ink); }
+.tr-nav a { color: var(--tr-ink); white-space: nowrap; }
 .tr-nav a:hover { color: var(--tr-blue); text-decoration: none; }
 .tr-nav a.is-active { color: var(--tr-blue); border-bottom: 2px solid var(--tr-blue); padding-bottom: 4px; }
 .tr-nav .tr-divider { width: 1px; height: 18px; background: var(--tr-rule); }
@@ -282,15 +282,29 @@ body.tr {
   .tr-cards--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (max-width: 860px) {
-  body.tr { font-size: 16px; }
+/* The nav needs to collapse earlier than the page grid: five labels plus two
+   utility links stop fitting comfortably around 950px. */
+@media (max-width: 1140px) and (min-width: 961px) {
+  .tr-nav { gap: 22px; }
+}
+
+@media (max-width: 960px) {
   .tr-masthead .tr-wrap { flex-wrap: wrap; }
+  .tr-masthead img { height: 46px; }
   .tr-navtoggle { display: block; }
   .tr-nav { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 0; }
   .tr-nav.is-open { display: flex; }
-  .tr-nav a { width: 100%; padding: 14px 0; border-bottom: 1px solid var(--tr-rule); min-height: 48px; display: flex; align-items: center; }
+  .tr-nav a {
+    width: 100%; padding: 14px 0; min-height: 48px;
+    border-bottom: 1px solid var(--tr-rule);
+    display: flex; align-items: center; white-space: normal;
+  }
   .tr-nav a.is-active { border-bottom: 1px solid var(--tr-rule); }
   .tr-nav .tr-divider { display: none; }
+}
+
+@media (max-width: 860px) {
+  body.tr { font-size: 16px; }
   .tr-topbar .tr-wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
   .tr-topbar ul { flex-direction: column; gap: 4px; }
   .tr-topbar .tr-topbar__social { flex-direction: row; gap: 18px; }
