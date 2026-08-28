@@ -237,3 +237,17 @@ body.tr main .primary-instructor-top .col-md-2 .card { min-height: 190px; }
   body.tr main .primary-instructor-top .col-md-2 .card { min-height: 0; }
   body.tr main .primary-instructor-top { align-items: flex-start; }
 }
+
+/* ------------------------------------------------------------------ gallery */
+/* Filter buttons and the photo grid were centred while the page heading is
+   left-aligned. The gallery images carry a 1em margin, so pull the column out
+   by the same amount and the photos line up with the gutter. The filter script
+   hides the <img> elements rather than their wrappers, so this stays on the
+   original inline-block flow instead of becoming a grid, which would leave
+   holes when a filter is applied. */
+body.tr main .portfolio-content .text-center { text-align: left !important; }
+body.tr main .portfolio-content .filter-gallery {
+  margin-left: -1em;
+  margin-right: -1em;
+}
+body.tr main .portfolio-content li { margin: 0 0.75em 0.75em 0; }

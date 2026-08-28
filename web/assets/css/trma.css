@@ -103,6 +103,7 @@ body.tr {
 
 .tr-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px; align-items: start; }
 .tr-c7 { grid-column: span 7; } .tr-c5 { grid-column: span 5; }
+.tr-c6 { grid-column: span 6; }
 .tr-c4 { grid-column: span 4; } .tr-c9 { grid-column: span 9; } .tr-c3 { grid-column: span 3; }
 
 .tr-facts { border-left: 1px solid var(--tr-rule); padding-left: 40px; display: flex; flex-direction: column; gap: 20px; }
@@ -264,6 +265,31 @@ body.tr {
 .tr-readon { display: flex; flex-direction: column; gap: 0; margin-top: 12px; }
 .tr-readon a { padding: 12px 0; border-bottom: 1px solid var(--tr-rule); font-size: 15.5px; }
 
+
+/* ---------------------------------------- the short version, as a wide row */
+.tr-facts--row {
+  border-left: 0; padding-left: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px; background: var(--tr-rule); border: 1px solid var(--tr-rule);
+}
+.tr-facts--row .tr-fact {
+  background: var(--tr-paper); padding: 28px 30px;
+  flex-direction: column; align-items: flex-start; gap: 10px;
+}
+.tr-facts--row .tr-fact b { min-width: 0; font-size: 40px; line-height: 1; }
+.tr-facts--row .tr-fact span { font-size: 15.5px; }
+@media (max-width: 860px) {
+  .tr-facts--row { grid-template-columns: 1fr; }
+}
+
+/* ------------------------------------------------------------ our beginning */
+.tr-beginning .tr-figure { margin: 0; }
+.tr-beginning .tr-figure img {
+  display: block; width: 100%; height: 100%;
+  max-height: 420px; object-fit: cover; object-position: center;
+  border: 1px solid var(--tr-rule);
+}
+
 /* --------------------------------------------------------------- pagehead */
 .tr-pagehead { padding-top: 56px; padding-bottom: 8px; }
 .tr-pagehead h1 {
@@ -310,7 +336,7 @@ body.tr {
   .tr-topbar .tr-topbar__social { flex-direction: row; gap: 18px; }
 
   .tr-grid { grid-template-columns: 1fr; gap: 32px; }
-  .tr-c7, .tr-c5, .tr-c4, .tr-c9, .tr-c3 { grid-column: 1 / -1; }
+  .tr-c7, .tr-c5, .tr-c6, .tr-c4, .tr-c9, .tr-c3 { grid-column: 1 / -1; }
   .tr-facts { border-left: 0; padding-left: 0; border-top: 1px solid var(--tr-rule); padding-top: 28px; }
   .tr-dues { border-left: 0; padding-left: 0; border-top: 1px solid var(--tr-rule-2); padding-top: 20px; margin-top: 20px; }
 
