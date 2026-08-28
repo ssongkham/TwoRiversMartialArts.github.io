@@ -188,3 +188,26 @@ body.tr .container { max-width: var(--tr-max); padding-left: var(--tr-pad); padd
    content's intrinsic width — a wide table then pushes the whole page sideways.
    Bootstrap's .row is a flex container, so let its children shrink. */
 body.tr main .row > * { min-width: 0; }
+
+/* ------------------------------------------------- instructor roster rows */
+/* Portraits vary a lot in intrinsic size, so rows used to be ragged: a small
+   PNG rendered tiny while a large JPG filled its column. Give every portrait
+   the same box and letterbox rather than crop — these are photographs of real
+   people and nobody should lose their chin to object-fit: cover. */
+body.tr main .primary-instructor-top { align-items: center; }
+body.tr main .primary-instructor-top img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  object-position: center;
+  background: var(--tr-paper);
+}
+/* Two instructors have no portrait on file; their photo cell must still hold
+   the row's rhythm rather than collapsing. */
+body.tr main .primary-instructor-top .col-md-2 .card { min-height: 190px; }
+
+@media (max-width: 767px) {
+  body.tr main .primary-instructor-top img { height: 150px; }
+  body.tr main .primary-instructor-top .col-md-2 .card { min-height: 0; }
+  body.tr main .primary-instructor-top { align-items: flex-start; }
+}
