@@ -161,6 +161,21 @@ body.tr {
    visible underline so it reads as a link, and a stretched pseudo-element
    turns the whole box into the hit area. Only one link per card, so nothing
    else gets swallowed. Cards without a link are untouched. */
+/* Any heading that is a link looks like one, wherever it appears -- new
+   pages and legacy bodies alike. :where() keeps the specificity at zero so
+   component rules below still win on colour. */
+:where(body.tr) main :is(h1, h2, h3, h4, h5, h6) a {
+  color: var(--tr-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--tr-ink-3);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+:where(body.tr) main :is(h1, h2, h3, h4, h5, h6) a:hover {
+  color: var(--tr-blue-hover);
+  text-decoration-color: currentColor;
+}
+
 .tr-card { position: relative; }
 .tr-card h3 a, .tr-branch h3 a { color: var(--tr-ink); }
 .tr-card h3 a {
@@ -174,8 +189,8 @@ body.tr {
   position: absolute;
   inset: 0;
 }
-.tr-card:hover h3 a { color: var(--tr-blue); text-decoration-color: currentColor; }
-.tr-branch h3 a:hover { color: var(--tr-blue); text-decoration: none; }
+.tr-card:hover h3 a { color: var(--tr-blue-hover); text-decoration-color: currentColor; }
+.tr-branch h3 a:hover { color: var(--tr-blue-hover); text-decoration-color: currentColor; }
 
 /* the whole card reacts, so the hit area is obvious before you click */
 .tr-card:has(h3 a):hover { background: var(--tr-shade); }

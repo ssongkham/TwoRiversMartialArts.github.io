@@ -42,10 +42,11 @@ body.tr main .heading h5 { font-family: var(--tr-mono); font-size: 12px;
   letter-spacing: 0.14em; text-transform: uppercase; color: var(--tr-red); font-weight: 400; }
 
 /* ------------------------------------------------------------------ links */
-body.tr main p a, body.tr main li a, body.tr main td a,
-body.tr main .title a, body.tr main .left-content a { color: var(--tr-blue); }
-body.tr main p a:hover, body.tr main li a:hover, body.tr main td a:hover,
-body.tr main .title a:hover, body.tr main .left-content a:hover { color: var(--tr-blue-dark); }
+/* style.css only styles links with a bare `a { }` selector, which the base rule
+   in trma.css already outranks, so restating the colour here was redundant --
+   and the .title / .left-content classes outranked the heading-link rule,
+   leaving heading links blue while the same links on new pages were ink. */
+body.tr main a:hover { color: var(--tr-blue-hover); }
 
 /* ---------------------------------------------------------- side navigation */
 body.tr .sidebar-left {
@@ -137,8 +138,8 @@ body.tr .alert {
   color: var(--tr-ink-2);
 }
 body.tr .alert-info { background: var(--tr-shade); border-color: var(--tr-rule); }
-body.tr .alert-warning { background: var(--tr-red-tint); border-color: transparent; color: var(--tr-red); }
-body.tr .alert-warning p, body.tr .alert-warning a { color: var(--tr-red); }
+body.tr .alert-warning { background: var(--tr-shade); border-color: var(--tr-rule); color: var(--tr-ink-2); }
+body.tr .alert-warning p { color: var(--tr-ink-2); }
 
 /* ----------------------------------------------------------------- tables */
 body.tr table { border-collapse: collapse; }
@@ -328,3 +329,14 @@ body.tr main .tr-paycard table { width: 100%; table-layout: fixed; }
 body.tr main .tr-paycard select,
 body.tr main .tr-paycard input[type="text"] { width: 100%; }
 body.tr main .paypal-code h3 { font-size: 20px; }
+
+/* Heading links inside legacy bodies are caught by the `.title a` colour rule
+   above; keep them matching the heading links on the new pages instead. */
+body.tr main h1 a, body.tr main h2 a, body.tr main h3 a,
+body.tr main h4 a, body.tr main h5 a, body.tr main h6 a {
+  color: var(--tr-ink);
+}
+body.tr main h1 a:hover, body.tr main h2 a:hover, body.tr main h3 a:hover,
+body.tr main h4 a:hover, body.tr main h5 a:hover, body.tr main h6 a:hover {
+  color: var(--tr-blue-hover);
+}
