@@ -166,9 +166,35 @@ body.tr .wrapper-content { box-shadow: none; }
 body.tr .top-area, body.tr .navigation, body.tr .footer-bs,
 body.tr .banner-background, body.tr .back-to-top { display: none !important; }
 
-/* the legacy grid keeps its container width in step with the new one */
-body.tr .container { max-width: var(--tr-max); padding-left: var(--tr-pad); padding-right: var(--tr-pad); }
-@media (max-width: 1080px) { body.tr .container { max-width: 100%; } }
+/* Legacy bodies must line up with the page heading above them, which uses
+   .tr-wrap. Give the outermost legacy container the same width and gutters;
+   the nested .row/.col padding then nets to zero, so text starts on the same
+   vertical as the <h1>. */
+body.tr main .container,
+body.tr main .container-fluid {
+  max-width: var(--tr-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--tr-pad);
+  padding-right: var(--tr-pad);
+}
+/* only the OUTERMOST container sets the gutters; nested ones would double them */
+body.tr main .container .container,
+body.tr main .container .container-fluid,
+body.tr main .container-fluid .container,
+body.tr main .container-fluid .container-fluid {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  /* keep Bootstrap's own 15px gutter: it offsets the negative margins on any
+     .row inside. Zeroing it lets nested rows hang 15px past each edge. */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (max-width: 1080px) {
+  body.tr main .container,
+  body.tr main .container-fluid { max-width: 100%; }
+}
 
 /* Wide legacy tables must not push the page sideways on a phone. Below the
    tablet breakpoint the table itself becomes the scroll container, so the
