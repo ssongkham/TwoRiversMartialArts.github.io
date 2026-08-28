@@ -6,7 +6,7 @@ context = {
           <div style="float:left;margin:8px">
           {{ make_anchor("mr_heintz") }}
           <img src="assets/images/History/EricHeintz01.jpg" alt="" 
-               class="img-responsive img-thumbnail" >
+               class="img-fluid img-thumbnail" >
           </div>
           <span style="text-align:center; font-size: large; font-weight: bold">
           Master Eric Heintz
@@ -120,7 +120,7 @@ context = {
         ('''
           <div style="float:left;margin:8px">
           <img src="assets/images/History/clements.jpg" alt="" width="108"
-               class="img-responsive img-thumbnail" >
+               class="img-fluid img-thumbnail" >
           </div>
           <span style="text-align:center; font-size: large; font-weight: bold">
           Mr. Frank Clements
@@ -143,7 +143,7 @@ context = {
         ('''
           <div style="float:left;margin:8px">
           <img src="assets/images/History/scotthall.jpg" alt="" width="108"
-               class="img-responsive img-thumbnail" >
+               class="img-fluid img-thumbnail" >
           </div>
           <span style="text-align:center; font-size: large; font-weight: bold">
           Mr. Scott Hall
@@ -169,7 +169,7 @@ context = {
         ('''
           <div style="float:left;margin:8px">
           <img src="assets/images/History/beard.jpg" alt="" width="108"
-               class="img-responsive img-thumbnail" >
+               class="img-fluid img-thumbnail" >
           </div>
           <span style="text-align:center; font-size: large; font-weight: bold">
           Mr. Ed Beard
@@ -191,7 +191,7 @@ context = {
         '''
           <div style="float:left;margin:8px">
           <img src="assets/images/History/krumme.jpg" alt="" width="108"
-               class="img-responsive img-thumbnail" >
+               class="img-fluid img-thumbnail" >
           </div>
           <span style="text-align:center; font-size: large; font-weight: bold">
           Master Richard Krumme
@@ -214,7 +214,7 @@ context = {
           <div style="float:left;margin:8px">
           {{ make_anchor("mr_samuelson") }}
           <img src="assets/images/instructors/indianola/instructor_SamuelsonM.jpg" alt="" 
-               class="img-responsive img-thumbnail" >
+               class="img-fluid img-thumbnail" >
           </div>
           <span style="text-align:center; font-size: large; font-weight: bold">
           Master Marvin Samuelson 
@@ -240,7 +240,7 @@ context = {
         '''
           <div style="float:left;margin:8px">
           <img src="assets/images/History/miles.jpg" alt="" width="108"
-               class="img-responsive img-thumbnail" >
+               class="img-fluid img-thumbnail" >
           </div>
           <span style="text-align:center; font-size: large; font-weight: bold">
           Mr. Richard Miles
