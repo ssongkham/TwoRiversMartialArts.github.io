@@ -1,625 +1,111 @@
-{% extends "layout1.html" %}
+{% extends "layout2.html" %}
 
-{% block title %}
- Two Rivers Martial Arts -
- Des Moines, Iowa, Tae Kwon Do, Self Defense, Tai Chi, Kobudo
-{% endblock %}
-
-{% block banner %}
-Welcome to Two Rivers Martial Arts
-{% endblock %}
+{% block title %}Two Rivers Martial Arts &mdash; Traditional Tae Kwon Do in Central Iowa{% endblock %}
 
 {% block content %}
-    <!-- Start: What we offer -->
-    <div class="offer-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="offer-level ">
-                        {# <div class="col-md-12 text-center">
-                            <div class="heading">
-                                <h2>Welcome to Two Rivers Martial Arts</h2>
-                            </div>
-                        </div> #}
-                        <div class="col-md-6 panel-area wrapper-content animated rollIn">
-                            <div class="head-title">
-                                <h1>
-                                    How Do I Start?</h1>
-                            </div>
-                            <div class="title">
-                                <div class="image">
-                                    <img src={{linkto("assets/images/Home/middlepunch.png")}} align="left" 
-                                         alt="How Do I Start" class="img-fluid wel-trma-img">
-                                </div>
-                                <p> Our Tae Kwon Do classes are physically demanding, but structured
-                                    to create a fun and rewarding
-                                    experience. Come see for yourself, there is no obligation or cost.</p>
-                                <br>
-                                <div class="button-group">
-                                    <a href={{linkto("startingtkd.html")}} class="btn btn-primary btn-outline">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 panel-area">
-                            <div class="head-title">
-                                <h1>
-                                    Class Schedules</h1>
-                            </div>
-                            <div class="title">
-                                <div class="image">
-                                    <img src={{linkto("assets/images/Home/item-preview-joey.png")}} 
-                                         align="left" alt="Class Schedule" 
-                                         class="img-fluid wel-trma-img">
-                                </div>
-                                <p>With Multiple locations in Central Iowa, find a branch convenient for you and see what we're
-                                    all about.</p>
-                                <br>
-                                <div class="button-group">
 
-                                    <a href={{linkto("locations-trma.html")}} class="btn btn-primary btn-outline">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 panel-area">
-                            <div class="head-title">
-                                <h1>
-                                    Our Instructors</h1>
-                            </div>
-                            <div class="title">
-                                <div class="image">
-                                    <img src={{linkto("assets/images/Home/item-preview-neubauer.png")}} align="left"
-                                     alt="Instructors" class="img-fluid wel-trma-img">
-                                </div>
-                                <p>Our black belts have spent many years committed to the art of Tae Kwon Do and enjoy sharing
-                                    their skills and passing it on to their students.</p>
-                                <br>
-                                <div class="button-group">
-                                    <a href={{linkto("instructors-primary.html")}} class="btn btn-primary btn-outline">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 panel-area">
-                            <div class="head-title">
-                                <h1>
-                                    Two Rivers History</h1>
-                            </div>
-                            <div class="title">
-                                <div class="image">
-                                    <img src={{linkto("assets/images/Home/item-preview-dojang.png")}} align="left" alt="Trma History" class="img-fluid wel-trma-img">
-                                </div>
-                                <p> Two Rivers Martial Arts teaches traditional Tae Kwon Do and self-defense, but we are not
-                                    a traditional martial arts school.</p>
-                                <br>
-                                <div class="button-group">
-                                    <a href={{linkto("history-trma.html")}} class="btn btn-primary btn-outline">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END WELCOME SECTION -->
-                <div class="col-md-3" >
-                    <div class="heading trma-news">
-                        <h2>Latest News</h2>
-                    </div><hr/>
-                    <div class="trma-news-scroll">
-                    {{ latest_news }}
-                    </div>
-
-                </div>
+    <!-- hero -->
+    <div class="tr-hero">
+      <div class="tr-wrap">
+        <div class="tr-grid">
+          <div class="tr-c7">
+            <p class="tr-eyebrow">Two Rivers Martial Arts &middot; Central Iowa</p>
+            <h1>Traditional Tae&nbsp;Kwon&nbsp;Do, taught by volunteers, at six branches across central Iowa.</h1>
+            <p class="tr-lede">We are a nonprofit club, not a franchise. Come and watch a class,
+              or take one &mdash; the first is free, there is nothing to sign, and nobody will
+              call you afterwards.</p>
+            <div class="tr-btns">
+              <a class="tr-btn" href={{linkto("classes.html")}}>Find a class near you</a>
+              <a class="tr-btn tr-btn--ghost" href={{linkto("start-here.html")}}>What it costs</a>
             </div>
+          </div>
+          <div class="tr-c5">
+            <div class="tr-facts">
+              <p class="tr-label">The short version</p>
+              <div class="tr-fact">
+                <b>$25&ndash;30</b>
+                <span>per month, per person. Less for each additional family member.</span>
+              </div>
+              <hr class="tr-hr">
+              <div class="tr-fact">
+                <b>Six</b>
+                <span>branches &mdash; Des Moines, Clive, Indianola, Carlisle, Winterset, Waukee.</span>
+              </div>
+              <hr class="tr-hr">
+              <div class="tr-fact">
+                <b>Age 7+</b>
+                <span>Families train together in the same class. All ages above that.</span>
+              </div>
+            </div>
+          </div>
         </div>
+        {{ tr_rivers }}
+      </div>
     </div>
-    <!-- End: What we offer -->
-    <!-- Start: Beginning Area -->
-    <div class="philosophy-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="left-content">
-                        <div class="heading">
-                            <h5>Welcome!</h5>
-                            <h2>Our Beginning</h2>
-                        </div>
-                        <div class="title">
-                            <p>
-                                Two Rivers traces its roots to the Eric Heintz Black Belt Academy, and through Master Heintz, to Grandmaster Woo Jin Jung
-                                of Jung's Tae Kwon Do in Cedar Rapids.
-                            </p>
-                            <p>
-                                Master Heintz ran a traditional Tae Kwon Do school in the typical manner. He was one of Master Jung's best students and taught
-                                Tae Kwon Do at the YMCA.
-                            </p>
-                        </div>
-                        <div class="button-group">
-                            <a href={{linkto("history-trma.html")}} class="btn btn-primary btn-outline">More About Us</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="right-content">
-                        <div class="image">
-                            <img src={{linkto("assets/images/History/ehkb.jpg")}} alt="Images" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    {{ tr_tenets_band }}
+
+    <!-- where and when -->
+    <div class="tr-section">
+      <div class="tr-wrap">
+        <div class="tr-sechead">
+          <h2>Where and when we train</h2>
+          <a class="tr-more" href={{linkto("classes.html")}}>All six branches, with maps &rarr;</a>
         </div>
+        <div class="tr-cards tr-cards--3">
+          {% for b in BRANCHES %}
+          <div class="tr-card{% if b['status'] %} tr-card--muted{% endif %}">
+            <div class="tr-card__top">
+              <h3><a href={{linkto(b['page'])}}>{{ b['short'] }}</a></h3>
+              <span class="tr-price">${{ b['price'] }}/mo</span>
+            </div>
+            <p class="tr-where">{{ b['town'] }} &middot; {{ b['addr'][0] }}</p>
+            <p class="tr-when tr-num">{% for line in b['summary'] %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+            {% if b['status'] %}<p class="tr-flag">{{ b['status'] }}</p>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
     </div>
-    <!-- End: Beginning Area -->
-    <!-- Start: Parallax Banner -->
-    <div class="parallax-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <span id="donate"></span>
-                    <div class="heading">
-                        <h2>Volunteering and Donations!</h2>
-                    </div>
-                    <div class="donation-detail">
-                        <p class="donation">
-                            If you are looking for a good cause, please consider Two Rivers Martial Arts as we are always looking to improve our organization
-                            and aid our communities.</p>
 
-                    </div>
-                    <div class="button-group">
-                        <a href={{linkto("contact.html")}} class="btn btn-primary btn-outline">Contact Us</a>
-                        <br/>
-                  <form action="https://www.paypal.com/donate" method="post" target="_top">
-                  <input type="hidden" name="hosted_button_id" value="4EL8Q5P7V5FB8" />
-                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                  <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                  </form>
-<!--
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="7PBTEDPMZH3X8" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
--->
-                    </div>
-                </div>
+    <!-- a club, not a business -->
+    <div class="tr-section">
+      <div class="tr-wrap">
+        <div class="tr-grid">
+          <div class="tr-c7">
+            <h2>A club, not a business</h2>
+            <div class="tr-prose" style="margin-top: 22px;">
+              <p>Two Rivers is a nonprofit run by its own members. Every instructor is a
+                volunteer &mdash; they hold rank, they teach the class you walk into, and none
+                of them is paid to do it. The dues cover the hall and the insurance, and that
+                is why they are twenty-five dollars.</p>
+              <p>There are no contracts, no belt-testing packages, and no upgrade path to a more
+                expensive class. Our lineage runs through Master Eric Heintz to Grandmaster
+                Woo Jin Jung, and we still teach it the way it was handed to us.</p>
             </div>
+          </div>
+          <div class="tr-c5">
+            <div class="tr-aside" style="margin-top: 0;">
+              <p class="tr-label">Latest news</p>
+              <div style="margin-top: 16px;">
+                {{ latest_news }}
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- End: Parallax Banner -->
-    <!-- Start: Training Program -->
-    <div class="training-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="heading">
-                        <h2>Training Program</h2>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="trainer">
-                        <div class="col-md-4 text-center">
-                            <div class="card box box_01">
-                                <div class="image">
-                                    <img src={{linkto("assets/images/program/TKD/tkd01.jpg")}} class="img-fluid">
-                                </div>
-                                <div class="heading-title">
-                                    <h2>Tae Kwon Do</h2>
-                                </div>
-                                <div class="title">
-                                    <p>To try out our club and the art of Tae Kwon Do, just come to a few classes!</p>
-                                </div>
-                                <div class="button-group">
-                                    <a href={{linkto("curriculum.html")}} class="btn btn-primary btn-outline">More info</a>
-                                </div>
-                            </div>
-                        </div>
-                        {#
-                        <div class="col-md-4 text-center">
-                            <div class="card box box_01">
-                                <div class="image">
-                                    <img src={{linkto("assets/images/program/BBYG/bbyg.png")}} alt="" class="img-fluid">
-                                </div>
-                                <div class="heading-title">
-                                    <h2>Black Belt Youth Group</h2>
-                                </div>
-                                <div class="title">
-                                    <p>The school's Black Belt Youth Group is open to all Youth Black Belts.</p>
-                                </div>
-                                <div class="button-group">
-                                    <a href={{linkto("ybbc.html")}} class="btn btn-primary btn-outline">More info</a>
-                                </div>
-                            </div>
-                        </div>
-                        #}
-                        <div class="col-md-4 text-center">
-                            <div class="card box box_01">
-                                <div class="image">
-                                    <img src={{linkto("assets/images/program/MartialSpirit/MartialSpiritClasss.jpg")}} alt="" class="img-fluid">
-                                </div>
-                                <div class="heading-title">
-                                    <h2>Martial Spirit</h2>
-                                </div>
-                                <div class="title">
-                                    <p>This is a formal martial art class that can be started at any time.</p>
-                                </div>
-                                <div class="button-group">
-                                    <a href={{linkto("martial-spirit.html")}} class="btn btn-primary btn-outline">More info</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4 text-center">
-                            <div class="card box box_01">
-                                <div class="image">
-                                    <img src={{linkto("assets/images/program/Kobudo/Kobudo.jpg")}} alt="" class="img-fluid">
-                                </div>
-                                <div class="heading-title">
-                                    <h2>Kobudo</h2>
-                                </div>
-                                <div class="title">
-                                    <p>Kobudo is an ancient art of Okinawan Weaponry.</p>
-                                </div>
-                                <div class="button-group">
-                                    <a href={{linkto("kobudo.html")}} class="btn btn-primary btn-outline">More info</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        {#
-                        <div class="col-md-4 text-center">
-                            <div class="card box box_01">
-                                <div class="image">
-                                    <img src={{linkto("assets/images/program/TaiChi/TaiChiClass.png")}} alt="" class="img-fluid">
-                                </div>
-                                <div class="heading-title">
-                                    <h2>Tai Chi</h2>
-                                </div>
-                                <div class="title">
-                                    <p>This class is currently offered to Two Rivers Martial Arts black belts.</p>
-                                </div>
-                                <div class="button-group">
-                                    <a href={{linkto("taichi.html")}} class="btn btn-primary btn-outline">More info</a>
-                                </div>
-                            </div>
-                        </div>
-                        #} 
-                        <div class="col-md-4 text-center">
-                            <div class="card box box_01">
-                                <div class="image">
-                                    <img src={{linkto("assets/images/program/SelfDefense/SelfDefense01.jpg")}} alt="" class="img-fluid">
-                                </div>
-                                <div class="heading-title">
-                                    <h2>Self Defense</h2>
-                                </div>
-                                <div class="title">
-                                    <p>Two Rivers Martial Arts Self Defense curriculum was created by Master Deaton.</p>
-                                </div>
-                                <div class="button-group">
-                                    <a href={{linkto("curriculum.html")}} class="btn btn-primary btn-outline">More info</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    <!-- closing -->
+    <div class="tr-closing">
+      <div class="tr-wrap">
+        <div>
+          <h2>Come and watch a class.</h2>
+          <p>No cost, no obligation. Wear something you can move in, or just sit at the side
+            and see what it looks like.</p>
         </div>
+        <a class="tr-btn tr-btn--light" href={{linkto("classes.html")}}>Find your branch</a>
+      </div>
     </div>
-    <!-- End: Training Program -->
-    <!-- Start: Staff Our Grand Masters -->
-    <div class="our-instructor">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="heading">
-                        <small>Staff</small>
-                        <h2>Our Grand Masters </h2>
-                    </div>
-                </div>
-                <div class="col-md-12 instructor">
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/winterset/instructor_McbroomB.jpg")}} 
-                                 alt="Grandmaster Mcbroom" class="profile" />
-                            <figcaption>
-                                <a href={{linkto("instructors-primary.html#mr_mcbroom")}}>
-                                <h2>Grandmaster Brett McBroom</h2>
-                                </a>
-                                <h4>8th Dan</h4>
-                                <blockquote>Grandmaster McBroom began training with Master Heintz in the early 1980s.
-                                    He earned his 8th Dan in December 2016.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="snip1390 hover">
-                            <img src={{linkto("assets/images/instructors/hub/MrGonzalez.png")}} 
-                             alt="Grandmaster Gonzalez" class="profile" />
-                            </a><figcaption>
-                                <a href={{linkto("instructors-primary.html#mr_gonzalez")}}>
-                                <h2>Grandmaster Steve Gonzalez</h2>
-                                </a>
-                                <h4>8th Dan</h4>
-                                <blockquote>Grandmaster Gonzalez started training with Master Heintz in the mid 1980s.
-                                    He earned his 8th Dan in December 2016.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/hub/MrDeaton.png")}} 
-                             alt="Grandmaster Deaton" class="profile" />
-                            <figcaption>
-                                <a href={{linkto("instructors-primary.html#mr_deaton")}}>
-                                <h2>Grandmaster Brad Deaton</h2>
-                                </a>
-                                <h4>8th Dan</h4>
-                                <blockquote>Grandmaster Deaton began training with Master Heintz in 1986. He earned his
-                                    8th Dan in December 2016. </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-
-                <div class="col-md-12 instructor">
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/hub/instructor_WilliamsA.jpg")}}
-                             alt="Master Williams" class="profile" />
-                            <figcaption>
-                                <a href={{linkto("instructors-primary.html#ms_williams")}}>
-                                <h2>Grandmaster Anita Williams</h2>
-                                </a>
-                                <h4>8th Dan</h4>
-                                <blockquote>Grandmaster Williams began training with Master Heintz in 1987 and earned her 8th Dan in August 
-                                    2023.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="snip1390 hover">
-                            <img src={{linkto("assets/images/instructors/hub/instructor_FergusonD.jpg")}}
-                             alt="Master Ferguson" class="profile" />
-                            <figcaption>
-                                <a href={{linkto("instructors-primary.html#mr_ferguson")}}>
-                                <h2>Grandmaster Dwayne Ferguson</h2>
-                                </a>
-                                <h4>8th Dan</h4>
-                                <blockquote>Grandmaster Ferguson began training with Master Heintz in 1989 and earned his 8th Dan in August 
-                                    2023. </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-
-
-                <div class="col-md-12 text-center">
-                    <div class="button-group text-center">
-                        <a href={{linkto("instructors-primary.html")}} class="btn btn-outline btn-primary">View More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End: Staff Our Grand Masters -->
-
-    <!-- Start: Staff Our Masters -->
-    <div class="our-instructor">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="heading">
-                        <small>Staff</small>
-                        <h2>Our Masters </h2>
-                    </div>
-                </div>
-                <div class="col-md-12 instructor">
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/hub/MstrSiever_sm.png")}}
-                             alt="Master Siever" class="profile" />
-                            <figcaption>
-                                <a href={{linkto("instructors-primary.html#mr_siever")}}>
-                                <h2>Master Bryan Siever</h2>
-                                </a>
-                                <h4>7th Dan</h4>
-                                <blockquote>Master Siever began training with
-                                    Master Heintz in the spring of 1993.
-                                    He earned his 7th
-                                    Dan in August of 2023. </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/indianola/MrNetsch.png")}} alt="Master Roger Netsch" class="profile" />
-                            <figcaption>
-                                <a href={{linkto("instructors-primary.html#mr_netsch")}}>
-                                <h2>Master Roger Netsch</h2>
-                                </a>
-                                <h4>7th Dan</h4>
-                                <blockquote>Master Netsch earned his 7th Dan in August 2023.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/indianola/mskingsbury.jpg")}} alt="Master Lucy Kingsbury" class="profile" />
-                            <figcaption>
-                                <a href={{linkto("instructors-primary.html#ms_kingsbury")}}>
-                                <h2>Master Lucy Kingsbury</h2>
-                                </a>
-                                <h4>6th Dan</h4>
-                                <blockquote>Master Kingsbury earned her 6th Dan in April 2026.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/indianola/MrAnderson.png")}} alt="Master Brian Anderson" class="profile" />
-                            <figcaption>
-                                <a href={{linkto("instructors-primary.html#mr_anderson")}}>
-                                <h2>Master Brian Anderson</h2>
-                                </a>
-                                <h4>6th Dan</h4>
-                                <blockquote>Master Anderson began his training with Two Rivers in 2003 and earned his 6th Dan in June 2026.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/hub/MrCummings.png")}} alt="Master Drew Cummings" class="profile" />
-                            <figcaption>
-                                <a href={{linkto("instructors-primary.html#mr_cummings")}}>
-                                <h2>Master Drew Cummings</h2>
-                                </a>
-                                <h4>5th Dan</h4>
-                                <blockquote>Master Cummings began his training with Two Rivers in 2004 and earned his 5th Dan in June 2021.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/MrKramer.png")}} alt="Master Brad Kramer" class="profile" />
-                            <figcaption>
-                                <h2>Master Brad Kramer</h2>
-                                </a>
-                                <h4>5th Dan</h4>
-                                <blockquote>
-                                Master Kramer began his training in 1983 at the Eric Heintz
-                                Black Belt Academy and earned his 5th Dan in April 2022.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/MrComito.png")}} alt="Master Perry Comito" class="profile" />
-                            <figcaption>
-                                <h2>Master Perry Comito</h2>
-                                </a>
-                                <h4>5th Dan</h4>
-                                <blockquote>
-                                Master Comito began his training in 1995 at the Eric Heintz
-                                Black Belt Academy and earned his 5th Dan in April 2022.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img src={{linkto("assets/images/instructors/wdsm/MsBaileyThumb.png")}} alt="Master Jennifer Bailey" class="profile" />
-                            <figcaption>
-                                <h2>Master Jennifer Bailey</h2>
-                                </a>
-                                <h4>5th Dan</h4>
-                                <blockquote>
-                                Master Bailey started training at Two Rivers
-                                in August 2008 and earned her 5th Dan in
-                                April 2022.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4">
-                        <figure class="snip1390">
-                            <img height="130px" src={{linkto("assets/images/instructors/MrGoldstein.jpg")}} alt="Master Steven Goldstein" class="profile" />
-                            <figcaption>
-                                <h2>Master Steven Goldstein</h2>
-                                </a>
-                                <h4>5th Dan</h4>
-                                <blockquote>
-                                Master Goldstein started training at Two Rivers
-                                in March 2010 and earned his 5th Dan in December 2023.
-                                </blockquote>
-                            </figcaption>
-                        </figure>
-                    </div>
-
-                </div>
-                <div class="col-md-12 text-center">
-                    <div class="button-group text-center">
-                        <a href={{linkto("instructors-primary.html")}} class="btn btn-outline btn-primary">View More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End: Staff Our Masters -->
-
-    <!-- Start: Promo Section -->
-    <div class="testimonial-content">
-        <div class="container">
-            <div class="row">
-                {# <div class="wrapper">
-                    <div class="testimonial">
-                        <ul class="testimonial-ul">
-                            <li class="testimonial-slide active">
-                                <p class="slidePara"> #}
-                   {#
-                   <div style="margin-right:30px">
-                      <a href="https://www.carstickers.com/"> <img src="https://www.carstickers.com/static/img/logo-medium.png"
-                       alt="Car Stickers, Inc."/> </a>
-                   </div> #}
-                   {#
-                                </p>
-                            </li>
-                            <li class="testimonial-slide">
-                                <p class="slidePara"> #}
-                    <div>
-                                    <a href="http://www.taekwondotimes.com/">
-                                        <img src={{linkto("assets/images/Home/tkdt.png")}} alt="profile-sample6" class="img-fluid" />
-                                    </a>
-                    </div> {#
-                                </p>
-                            </li>
-                            <span class="top-left"></span>
-                            <span class="top-right"></span>
-                        </ul>
-                    </div>
-                </div> #}
-            </div>
-        </div>
-    </div>
-    <!-- End: Promo Section -->
-    {#
-  <!-- Start: Testimonial Section -->
-        <div class="testimonial-content   alert alert-info">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <div class="heading">
-                            <h2>Testimonials</h2>
-                        </div>
-                    </div>
-                    <div class="wrapper">
-                        <div class="testimonial">
-                            <ul class="testimonial-ul">
-                                <li class="testimonial-slide active">
-                                    <p class="slidePara"> Testimonial One.
-                                    </p>
-                                </li>
-                                <li class="testimonial-slide">
-                                    <p class="slidePara"> Testimonial Two</p>
-                                </li>
-                                <li class="testimonial-slide">
-                                    <p class="slidePara"> Testimonial Three.
-                                    </p>
-                                </li>
-                                <span class="top-left"></span>
-                                <span class="top-right"></span>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End: Testimonial Section -->
-#}
 
 {% endblock %}

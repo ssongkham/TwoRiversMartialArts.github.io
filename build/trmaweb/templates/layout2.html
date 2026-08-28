@@ -1,0 +1,33 @@
+{{ tr_doctype }}
+<html lang="en">
+<head>
+    <title>{% block title %}Two Rivers Martial Arts{% endblock %}</title>
+    {{ tr_head }}
+    {% block morecss %}{% endblock %}
+</head>
+<body class="tr">
+
+    {{ tr_topbar }}
+    {{ tr_nav }}
+
+    <main id="main">
+    {% block content %}{% endblock %}
+    </main>
+
+    {{ tr_footer }}
+
+    <script>
+      (function () {
+        var btn = document.querySelector('.tr-navtoggle');
+        var nav = document.getElementById('tr-nav');
+        if (!btn || !nav) { return; }
+        btn.addEventListener('click', function () {
+          var open = nav.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      })();
+    </script>
+    {% block morejs %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{# Footer. The five tenet names sit above the legal line on every page. #}
+    <footer class="tr-footer">
+      <div class="tr-wrap">
+        <nav>
+          <a href={{linkto("classes.html")}}>Classes &amp; Locations</a>
+          <a href={{linkto("start-here.html")}}>Start Here</a>
+          <a href={{linkto("history-trma.html")}}>About</a>
+          <a href={{linkto("instructors-primary.html")}}>Instructors</a>
+          <a href={{linkto("resource-tenets.html")}}>Resources</a>
+          <a href={{linkto("calendar.html")}}>Calendar</a>
+          <a href={{linkto("dues.html")}}>Dues and fees</a>
+          <a href={{linkto("donation.html")}}>Donate</a>
+          <a href={{linkto("contact.html")}}>Contact</a>
+        </nav>
+        <div class="tr-footer__base">
+          <div class="tr-footer__tenets">
+            {% for ko, rom, en, gloss in TENETS %}<span>{{ en }}</span>{% endfor %}
+          </div>
+          <p class="tr-footer__legal">Two Rivers Martial Arts &middot; 501(c)(3) nonprofit</p>
+        </div>
+      </div>
+    </footer>

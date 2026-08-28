@@ -1,0 +1,22 @@
+{# The five tenets, the identity anchor. Data from tr_branches.py #}
+    <div class="tr-tenets-band">
+      <div class="tr-wrap">
+        <div class="tr-sechead">
+          <div>
+            <p class="tr-eyebrow">What we teach, besides technique</p>
+            <h2>The Five Tenets of Tae Kwon Do</h2>
+          </div>
+          <a class="tr-more" href={{linkto("resource-tenets.html")}}>Read them in full &rarr;</a>
+        </div>
+        <div class="tr-tenets">
+          {% for ko, rom, en, gloss in TENETS %}
+          <div class="tr-tenet">
+            <p class="tr-ko">{{ ko }}</p>
+            <p class="tr-rom">{{ rom }}</p>
+            <h3>{{ en }}</h3>
+            <p>{{ gloss }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>

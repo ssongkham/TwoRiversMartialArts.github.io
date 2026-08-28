@@ -1,0 +1,179 @@
+{% extends "layout2.html" %}
+
+{% block title %}Start Here &mdash; Two Rivers Martial Arts{% endblock %}
+
+{% block content %}
+
+    <div class="tr-hero">
+      <div class="tr-wrap">
+        <div style="max-width: 62ch;">
+          <p class="tr-eyebrow">Start Here</p>
+          <h1>Your first class is free. Just turn up.</h1>
+          <p class="tr-lede">There is no trial to book, no form to fill in, and no one will phone
+            you. Find a class on the schedule, arrive ten minutes early, and tell the instructor
+            you are new.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tr-wrap" style="padding-top: 46px;">
+      <div class="tr-cards tr-cards--3">
+        <div class="tr-card" style="padding: 30px 32px;">
+          <p class="tr-eyebrow" style="font-size: 11px; letter-spacing: 0.14em;">First</p>
+          <h3 style="font-size: 24px; margin: 14px 0 10px;">Come and watch</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; color: #4A4A4F;">Sit at the side of any
+            class on the schedule. Nobody will ask you to join in, and nobody will ask for your
+            details.</p>
+        </div>
+        <div class="tr-card" style="padding: 30px 32px;">
+          <p class="tr-eyebrow" style="font-size: 11px; letter-spacing: 0.14em;">Then</p>
+          <h3 style="font-size: 24px; margin: 14px 0 10px;">Take a class</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; color: #4A4A4F;">Most people get far more
+            from one class than from watching three. Wear loose clothes and bare feet. You will
+            sign a release form on the night.</p>
+        </div>
+        <div class="tr-card" style="padding: 30px 32px;">
+          <p class="tr-eyebrow" style="font-size: 11px; letter-spacing: 0.14em;">When you are ready</p>
+          <h3 style="font-size: 24px; margin: 14px 0 10px;">Join</h3>
+          <p style="font-size: 15.5px; line-height: 1.62; color: #4A4A4F;">Pay your first month and
+            order a uniform. There is no contract and no joining fee &mdash; you can stop whenever
+            you like.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- what it costs -->
+    <div class="tr-section">
+      <div class="tr-wrap">
+        <div style="max-width: 62ch; margin-bottom: 26px;">
+          <h2>What it costs</h2>
+          <div class="tr-prose" style="margin-top: 14px;">
+            <p>Dues are monthly and cover every class at your branch. The more of a family who
+              train, the less each person pays &mdash; a family of five pays about sixteen
+              dollars a head.</p>
+          </div>
+        </div>
+
+        <div class="tr-table-scroll">
+          <table class="tr-duestable tr-num">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">1 person</th>
+                <th scope="col">2 family</th>
+                <th scope="col">3 family</th>
+                <th scope="col">4 family</th>
+                <th scope="col">5 family</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for tier in DUES_TIERS %}
+              <tr>
+                <th scope="row">{{ tier['label'] }}<small>per month</small></th>
+                {% for p in tier['prices'] %}<td>${{ p }}</td>{% endfor %}
+              </tr>
+              {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Works out at, per person</th>
+                {% for pp in PER_PERSON %}<td{% if loop.last %} class="tr-best"{% endif %}>{{ pp }}</td>{% endfor %}
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="tr-grid" style="margin-top: 28px; gap: 32px;">
+          <div class="tr-c4">
+            <p style="font-size: 15.5px; font-weight: 600; margin-bottom: 6px;">Uniform</p>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4A4F;">$40 with the club patch,
+              or $35 without. Bought once, when you decide to join.</p>
+          </div>
+          <div class="tr-c4">
+            <p style="font-size: 15.5px; font-weight: 600; margin-bottom: 6px;">Testing fees</p>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4A4F;">Charged per belt test,
+              only when you choose to test. Listed in full on the
+              <a href={{linkto("dues.html")}}>dues and fees</a> page.</p>
+          </div>
+          <div class="tr-c4">
+            <p style="font-size: 15.5px; font-weight: 600; margin-bottom: 6px;">Nothing else</p>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4A4F;">No joining fee, no
+              contract, no annual membership, no equipment package.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- what a class is like -->
+    <div class="tr-section">
+      <div class="tr-wrap">
+        <div class="tr-grid">
+          <div class="tr-c7">
+            <h2>What a class is like</h2>
+            <div class="tr-prose" style="margin-top: 20px;">
+              <p>An hour, usually. It opens with a bow and a warm-up, then basic techniques, then
+                forms and combinations, and it closes the way it opened. Classes are physically
+                demanding &mdash; that is the point &mdash; but you work at the level you arrive
+                with, and the instructor will tell you when to sit one out.</p>
+              <p>Adults and children train in the same class, families included. Sparring comes
+                later, and only with head gear, foot pads and a mouth guard.</p>
+              <p>We recommend starting at age seven, though there is no upper limit and never has
+                been. If your child is younger, come and talk to an instructor.</p>
+            </div>
+          </div>
+          <div class="tr-c5">
+            <div class="tr-aside" style="margin-top: 0; padding: 30px 32px;">
+              <p class="tr-label">Bring on the first night</p>
+              <ul class="tr-list" style="margin-top: 18px;">
+                <li><span>Loose clothing &mdash; a t-shirt and tracksuit trousers are right. No uniform needed yet.</span></li>
+                <li><span>Water. We train in bare feet, so nothing to put on them.</span></li>
+                <li><span>Ten minutes' head start, so you can meet the instructor before the bow-in.</span></li>
+                <li><span>A signature on the release form &mdash; a parent's, for anyone under eighteen.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- programmes -->
+    <div class="tr-section">
+      <div class="tr-wrap">
+        <h2 style="margin-bottom: 26px;">What we teach</h2>
+        <div class="tr-cards tr-cards--3">
+          <div class="tr-card" style="padding: 30px 32px;">
+            <h3 style="font-size: 25px; margin-bottom: 10px;">Tae Kwon Do</h3>
+            <p style="font-size: 15.5px; line-height: 1.62; color: #4A4A4F; margin-bottom: 14px;">The
+              main programme, taught at every branch: forms, sparring, self-defence and breaking,
+              in the traditional ITF curriculum.</p>
+            <p class="tr-label">All six branches</p>
+          </div>
+          <div class="tr-card" style="padding: 30px 32px;">
+            <h3 style="font-size: 25px; margin-bottom: 10px;">Martial Spirit</h3>
+            <p style="font-size: 15.5px; line-height: 1.62; color: #4A4A4F; margin-bottom: 14px;">A
+              Sunday-morning class at the Hub for students who want to go deeper into the art
+              beyond the standard curriculum.</p>
+            <p class="tr-label">Hub &middot; Sundays 9:30 am</p>
+          </div>
+          <div class="tr-card" style="padding: 30px 32px;">
+            <h3 style="font-size: 25px; margin-bottom: 10px;">Kobudo</h3>
+            <p style="font-size: 15.5px; line-height: 1.62; color: #4A4A4F; margin-bottom: 14px;">Traditional
+              Okinawan weapons &mdash; bo, sai, tonfa and others &mdash; taught alongside the
+              empty-hand curriculum.</p>
+            <p class="tr-label">Hub &middot; Sundays 12:00 pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tr-closing">
+      <div class="tr-wrap">
+        <div>
+          <h2>Ready when you are.</h2>
+          <p>Pick a branch, pick a night, and turn up. That is the whole process.</p>
+        </div>
+        <a class="tr-btn tr-btn--light" href={{linkto("classes.html")}}>See the schedule &rarr;</a>
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{# Five-item masthead nav. TR_ACTIVE is set per page in tr_active.py #}
+    <div class="tr-masthead">
+      <div class="tr-wrap">
+        <a href={{linkto("index.html")}} aria-label="Two Rivers Martial Arts, home">
+          <img src={{linkto("assets/images/trmalogo.png")}} alt="Two Rivers Martial Arts"></a>
+        <button class="tr-navtoggle" type="button" aria-expanded="false"
+                aria-controls="tr-nav" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="tr-nav" id="tr-nav">
+          <a class="{% if TR_ACTIVE == 'classes' %}is-active{% endif %}" href={{linkto("classes.html")}}>Classes &amp; Locations</a>
+          <a class="{% if TR_ACTIVE == 'start' %}is-active{% endif %}" href={{linkto("start-here.html")}}>Start Here</a>
+          <a class="{% if TR_ACTIVE == 'about' %}is-active{% endif %}" href={{linkto("history-trma.html")}}>About</a>
+          <a class="{% if TR_ACTIVE == 'resources' %}is-active{% endif %}" href={{linkto("resource-tenets.html")}}>Resources</a>
+          <a class="{% if TR_ACTIVE == 'calendar' %}is-active{% endif %}" href={{linkto("calendar.html")}}>Calendar</a>
+          <span class="tr-divider"></span>
+          <a class="tr-util" href={{linkto("contact.html")}}>Contact</a>
+          <a class="tr-util" href={{linkto("donation.html")}}>Donate</a>
+        </nav>
+      </div>
+    </div>

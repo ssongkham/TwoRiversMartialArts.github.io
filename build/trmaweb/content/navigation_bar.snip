@@ -15,10 +15,11 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item {{ HOME_active }}">
-                        <a class="nav-link" href={{linkto("index.html")}}>Home
-                            <span class="sr-only">(current)</span>
-                        </a>
+                    <li class="nav-item {{ LOCATIONS_active }}">
+                        <a class="nav-link" href={{linkto("classes.html")}}>Classes &amp; Locations</a>
+                    </li>
+                    <li class="nav-item {{ STARTING_active }}">
+                        <a class="nav-link" href={{linkto("start-here.html")}}>Start Here</a>
                     </li>
                     <li class="nav-item dropdown {{ ABOUT_active }}">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">
@@ -27,46 +28,39 @@
                         <div class="dropdown-menu">
                            <a class="dropdown-item" href={{linkto("history-trma.html")}}>History</a>
                            <a class="dropdown-item" href={{linkto("instructors-primary.html")}}>Instructors</a>
-                           <a class="dropdown-item" href={{linkto("startingtkd.html")}}>How to start</a>
                            <a class="dropdown-item" href={{linkto("curriculum.html")}}>Curriculum</a>
                            <a class="dropdown-item" href={{linkto("awards.html")}}>Awards</a>
                            <a class="dropdown-item" href={{linkto("testimonials.html")}}>Testimonials</a>
                            <a class="dropdown-item" href={{linkto("blackbeltlist.html")}}>List of black belts</a>
                            <a class="dropdown-item" href={{linkto("competition.html")}}>Competition</a>
                            <a class="dropdown-item" href={{linkto("community.html")}}>Community Outreach</a>
-                           <a class="dropdown-item" href="https://drive.google.com/open?id=1nir5s7Q2R0bln8YwJuBzqbCYbQdFONOs">Previous Instructors</a>
                            <a class="dropdown-item" href={{linkto("memoriam.html")}}>In Memoriam</a>
                         </div>
                     </li>
-                    <li class="nav-item {{ LOCATIONS_active }}">
-                        <a class="nav-link" href={{linkto("locations-trma.html")}}>Locations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href={{linkto("locations-trma.html#sched")}}>Schedule</a>
-                    </li>
-                    <li class="nav-item {{ RESOURCES_active }}">
-                        <a class="nav-link" href={{linkto("resource-tenets.html")}}>Resources</a>
-                    </li>
-                    <li class="nav-item dropdown {{ PROGRAMS_active }}">
+                    <li class="nav-item dropdown {{ RESOURCES_active }}">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop2" data-toggle="dropdown">
-                            Programs
+                            Resources
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href={{linkto("startingtkd.html")}}>Tae Kwon Do</a>
-                            <a class="dropdown-item" href={{linkto("martial-spirit.html")}}>Martial Spirit</a>
-                     <!--   <a class="dropdown-item" href={{linkto("ybbc.html")}}>Black Belt Youth Group</a>
-                            <a class="dropdown-item" href={{linkto("taichi.html")}}>Taichi</a> -->
-                            <a class="dropdown-item" href={{linkto("kobudo.html")}}>Kobudo</a> 
+                           <a class="dropdown-item" href={{linkto("resource-tenets.html")}}>Tenets of Tae Kwon Do</a>
+                           <a class="dropdown-item" href={{linkto("resource-terminology.html")}}>Terminology</a>
+                           <a class="dropdown-item" href={{linkto("resource-forms.html")}}>Forms</a>
+                           <a class="dropdown-item" href={{linkto("resource-belts.html")}}>Significance of belts</a>
+                           <a class="dropdown-item" href={{linkto("resource-dresscode.html")}}>Dress code</a>
+                           <a class="dropdown-item" href={{linkto("test-schedule.html")}}>Test schedule</a>
+                           <a class="dropdown-item" href={{linkto("resource-photos.html")}}>Photo archive</a>
+                           <a class="dropdown-item" href={{linkto("resource-videos.html")}}>Video archive</a>
+                           <a class="dropdown-item" href={{linkto("portfolio.html")}}>Gallery</a>
                         </div>
+                    </li>
+                    <li class="nav-item {{ CALENDAR_active }}">
+                        <a class="nav-link" href={{linkto("calendar.html")}}>Calendar</a>
                     </li>
                     <li class="nav-item {{ CONTACT_active }}">
                         <a class="nav-link" href={{linkto("contact.html")}}>Contact</a>
                     </li>
-                    <li class="nav-item {{ GALLERY_active }}">
-                        <a class="nav-link" href={{linkto("portfolio.html")}}>Gallery</a>
-                    </li>
-                    <li class="nav-item {{ CALENDAR_active }}">
-                        <a class="nav-link" href={{linkto("calendar.html")}}>Calendar</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href={{linkto("donation.html")}}>Donate</a>
                     </li>
                 </ul>
             </div>
