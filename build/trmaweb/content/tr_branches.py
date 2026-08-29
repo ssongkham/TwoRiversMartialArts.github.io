@@ -102,6 +102,25 @@ def _per_person():
         out.append('$%d' % lo if lo == hi else '$%d&ndash;%d' % (lo, hi))
     return out
 
+PROGRAMMES = [
+  { 'name': 'Tae Kwon Do', 'page': 'curriculum.html', 'frag': '',
+    'note': 'All six branches',
+    'body': 'The main programme, taught at every branch: forms, sparring, '
+            'self-defence and breaking, in the traditional ITF curriculum.' },
+  { 'name': 'Martial Spirit', 'page': 'martial-spirit.html', 'frag': '',
+    'note': 'Hub &middot; Sundays 9:30 am',
+    'body': 'A Sunday-morning class at the Hub for students who want to go '
+            'deeper into the art beyond the standard curriculum.' },
+  { 'name': 'Kobudo', 'page': 'kobudo.html', 'frag': '',
+    'note': 'Hub &middot; Sundays 12:00 pm',
+    'body': 'Traditional Okinawan weapons &mdash; bo, sai, tonfa and others '
+            '&mdash; taught alongside the empty-hand curriculum.' },
+  { 'name': 'Self Defense', 'page': 'curriculum.html', 'frag': '#self-defense',
+    'note': 'Part of the Tae Kwon Do class',
+    'body': 'Our own curriculum, written by Master Brad Deaton, to give younger '
+            'students ways to defuse a threatening situation without using force.' },
+]
+
 def _price_range():
     '''"$25-30" derived from the branches, so it cannot drift from the cards.'''
     lo = min(b['price'] for b in BRANCHES)
@@ -128,5 +147,6 @@ context = {
     'PER_PERSON': _per_person(),
     'PRICE_RANGE': _price_range(),
     'TENETS': TENETS,
+    'PROGRAMMES': PROGRAMMES,
   }
 }

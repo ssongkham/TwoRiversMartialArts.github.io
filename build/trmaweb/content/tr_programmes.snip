@@ -1,0 +1,11 @@
+{# The four programmes, rendered from PROGRAMMES so the homepage and Start Here
+   cannot drift apart. #}
+        <div class="tr-cards tr-cards--4">
+          {% for pr in PROGRAMMES %}
+          <div class="tr-card" style="padding: 30px 32px;">
+            <h3 style="font-size: 25px; margin-bottom: 10px;"><a href="{{ pathto(pr['page']) }}{{ pr['frag'] }}">{{ pr['name'] }}</a></h3>
+            <p style="font-size: 15.5px; line-height: 1.62; color: #4A4A4F; margin-bottom: 14px;">{{ pr['body'] }}</p>
+            <p class="tr-label">{{ pr['note'] }}</p>
+          </div>
+          {% endfor %}
+        </div>
