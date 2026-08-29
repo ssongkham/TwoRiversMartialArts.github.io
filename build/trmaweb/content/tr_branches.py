@@ -105,8 +105,8 @@ def _per_person():
 PROGRAMMES = [
   { 'name': 'Tae Kwon Do', 'page': 'curriculum.html', 'frag': '',
     'note': 'All six branches',
-    'body': 'The main programme, taught at every branch: forms, sparring, '
-            'self-defence and breaking, in the traditional ITF curriculum.' },
+    'body': 'The main program, taught at every branch: forms, sparring, '
+            'self-defense and breaking, in the traditional ITF curriculum.' },
   { 'name': 'Martial Spirit', 'page': 'martial-spirit.html', 'frag': '',
     'note': 'Hub &middot; Sundays 9:30 am',
     'body': 'A Sunday-morning class at the Hub for students who want to go '
