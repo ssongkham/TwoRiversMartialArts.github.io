@@ -164,6 +164,7 @@ body.tr {
 .tr-section { padding-top: 66px; }
 .tr-cards { display: grid; gap: 1px; background: var(--tr-rule); border: 1px solid var(--tr-rule); }
 .tr-cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tr-cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .tr-card { background: var(--tr-paper); padding: 24px 26px; }
 .tr-card--muted { background: var(--tr-shade); }
 .tr-card__top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 4px; }
@@ -375,7 +376,7 @@ body.tr {
   .tr-tenets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tr-tenet { border-right: 0; border-top: 1px solid var(--tr-rule); padding: 20px 0; }
   .tr-tenet:first-child { border-top: 0; }
-  .tr-cards--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tr-cards--3, .tr-cards--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* The nav needs to collapse earlier than the page grid: five labels plus two
@@ -410,7 +411,7 @@ body.tr {
   .tr-facts { border-left: 0; padding-left: 0; border-top: 1px solid var(--tr-rule); padding-top: 28px; }
   .tr-dues { border-left: 0; padding-left: 0; border-top: 1px solid var(--tr-rule-2); padding-top: 20px; margin-top: 20px; }
 
-  .tr-cards--3 { grid-template-columns: 1fr; }
+  .tr-cards--3, .tr-cards--4 { grid-template-columns: 1fr; }
   .tr-sechead { flex-direction: column; align-items: flex-start; gap: 10px; }
   .tr-closing .tr-wrap { flex-direction: column; align-items: flex-start; }
   .tr-footer__base { flex-direction: column; align-items: flex-start; gap: 16px; }
