@@ -62,7 +62,6 @@
           <div class="tr-card{% if b['status'] %} tr-card--muted{% endif %}">
             <div class="tr-card__top">
               <h3><a href={{linkto(b['page'])}}>{{ b['short'] }}</a></h3>
-              <span class="tr-price">${{ b['price'] }}/mo</span>
             </div>
             <p class="tr-where">{{ b['town'] }} &middot; {{ b['addr'][0] }}</p>
             <p class="tr-when tr-num">{% for line in b['summary'] %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
@@ -70,6 +69,9 @@
           </div>
           {% endfor %}
         </div>
+        <p class="tr-gridnote">Dues are {{ PRICE_RANGE }} a month depending on the branch, and
+          less per person when more of a family train.
+          <a href="{{ pathto("start-here.html") }}#costs">See what it costs</a>.</p>
       </div>
     </div>
 

@@ -102,6 +102,12 @@ def _per_person():
         out.append('$%d' % lo if lo == hi else '$%d&ndash;%d' % (lo, hi))
     return out
 
+def _price_range():
+    '''"$25-30" derived from the branches, so it cannot drift from the cards.'''
+    lo = min(b['price'] for b in BRANCHES)
+    hi = max(b['price'] for b in BRANCHES)
+    return '$%d' % lo if lo == hi else '$%d&ndash;%d' % (lo, hi)
+
 TENETS = [
   ('예의', 'Ye Ui', 'Courtesy',
    'Be polite, be fair, and respect the people you train with.'),
@@ -120,6 +126,7 @@ context = {
     'BRANCHES': BRANCHES,
     'DUES_TIERS': DUES_TIERS,
     'PER_PERSON': _per_person(),
+    'PRICE_RANGE': _price_range(),
     'TENETS': TENETS,
   }
 }
