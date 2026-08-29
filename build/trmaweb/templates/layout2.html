@@ -41,11 +41,12 @@
       (function () {
         var btn = document.querySelector('.tr-navtoggle');
         var nav = document.getElementById('tr-nav');
-        if (!btn || !nav) { return; }
-        btn.addEventListener('click', function () {
-          var open = nav.classList.toggle('is-open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
+        if (btn && nav) {
+          btn.addEventListener('click', function () {
+            var open = nav.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          });
+        }
       })();
     </script>
     {% if LEGACY %}{{ basic_js_libs }}{% endif %}

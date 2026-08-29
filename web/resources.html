@@ -142,9 +142,10 @@
           </div>
 
           <div class="tr-card" style="padding: 30px 32px;">
-            <h3 style="margin-bottom: 10px;"><a href="dues.html">Dues and fees</a></h3>
+            <h3 style="margin-bottom: 10px;"><a href="start-here.html#costs">Dues and fees</a></h3>
             <p style="font-size: 15.5px; line-height: 1.62; color: #4A4A4F;">Monthly dues by
-              branch, family rates, uniform cost and the testing fee for each grade.</p>
+              branch, family rates and uniform cost. Black belts paying annual dues use the
+              <a href="dues.html">black belt dues page</a>.</p>
           </div>
 
           <div class="tr-card" style="padding: 30px 32px;">
@@ -209,7 +210,8 @@
           <a href="instructors-primary.html">Instructors</a>
           <a href="resources.html">Resources</a>
           <a href="calendar.html">Calendar</a>
-          <a href="dues.html">Dues and fees</a>
+          <a href="start-here.html#costs">Dues and fees</a>
+          <a href="test-schedule.html">Test schedule</a>
           <a href="donation.html">Donate</a>
           <a href="contact.html">Contact</a>
           <a href="assets/images/program/TKD/RELEASE_AND_ASSUMPTION_OF_LIABILITY_2015.pdf">Release form</a>
@@ -228,11 +230,12 @@
       (function () {
         var btn = document.querySelector('.tr-navtoggle');
         var nav = document.getElementById('tr-nav');
-        if (!btn || !nav) { return; }
-        btn.addEventListener('click', function () {
-          var open = nav.classList.toggle('is-open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
+        if (btn && nav) {
+          btn.addEventListener('click', function () {
+            var open = nav.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          });
+        }
       })();
     </script>
     

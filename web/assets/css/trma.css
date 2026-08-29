@@ -81,7 +81,18 @@ body.tr {
 .tr-topbar a { color: var(--tr-on-dark); }
 .tr-topbar a:hover { color: #FFFFFF; }
 
-.tr-masthead { background: var(--tr-paper); border-bottom: 1px solid var(--tr-rule); }
+/* the sticky bar would otherwise cover whatever an in-page #link jumps to */
+:where(body.tr) main [id] { scroll-margin-top: 104px; }
+@media (max-width: 960px) { :where(body.tr) main [id] { scroll-margin-top: 84px; } }
+
+.tr-masthead {
+  background: var(--tr-paper);
+  border-bottom: 1px solid var(--tr-rule);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+/* the black utility strip scrolls away; only the logo + nav row follows you */
 .tr-masthead .tr-wrap {
   display: flex; justify-content: space-between; align-items: center; gap: 40px;
   padding-top: 20px; padding-bottom: 20px;
@@ -371,7 +382,7 @@ body.tr {
   .tr-masthead img { height: 46px; }
   .tr-navtoggle { display: block; }
   .tr-nav { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 0; }
-  .tr-nav.is-open { display: flex; }
+  .tr-nav.is-open { display: flex; max-height: calc(100vh - 120px); overflow-y: auto; }
   .tr-nav a {
     width: 100%; padding: 14px 0; min-height: 48px;
     border-bottom: 1px solid var(--tr-rule);

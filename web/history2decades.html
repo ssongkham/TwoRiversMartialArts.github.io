@@ -760,7 +760,8 @@ Two Rivers Martial Arts - Two Decades Later
           <a href="instructors-primary.html">Instructors</a>
           <a href="resources.html">Resources</a>
           <a href="calendar.html">Calendar</a>
-          <a href="dues.html">Dues and fees</a>
+          <a href="start-here.html#costs">Dues and fees</a>
+          <a href="test-schedule.html">Test schedule</a>
           <a href="donation.html">Donate</a>
           <a href="contact.html">Contact</a>
           <a href="assets/images/program/TKD/RELEASE_AND_ASSUMPTION_OF_LIABILITY_2015.pdf">Release form</a>
@@ -779,11 +780,12 @@ Two Rivers Martial Arts - Two Decades Later
       (function () {
         var btn = document.querySelector('.tr-navtoggle');
         var nav = document.getElementById('tr-nav');
-        if (!btn || !nav) { return; }
-        btn.addEventListener('click', function () {
-          var open = nav.classList.toggle('is-open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
+        if (btn && nav) {
+          btn.addEventListener('click', function () {
+            var open = nav.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          });
+        }
       })();
     </script>
     <!-- Js Libraries -->
