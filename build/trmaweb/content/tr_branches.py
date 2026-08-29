@@ -6,6 +6,7 @@ Schedules and prices mirror schedule.py / prices.py.
 
 import math
 import re
+import sys
 
 BRANCHES = [
   { 'key': 'hub', 'name': 'Hub &mdash; Des Moines', 'short': 'Hub', 'town': 'Des Moines',
@@ -19,7 +20,8 @@ BRANCHES = [
               ('Thursday', '5:45 &ndash; 7:00 pm &middot; 7:15 &ndash; 8:15 pm', ''),
               ('Friday', '6:00 &ndash; 7:30 pm', 'brown &amp; black belt'),
               ('Saturday', '10:30 am &ndash; 12:00 pm', ''),
-              ('Sunday', 'Martial Spirit 9:30 &middot; Kobudo 12:00 &middot; TKD 2:00', '')],
+              ('Sunday', 'Martial Spirit 9:30 &middot; Kobudo 12:00 &middot; TKD 2:00',
+               'brown &amp; black 2:00, 1st Sunday')],
     'instructors': ['Grandmaster Steve Gonzalez', 'Master Bryan Siever', 'Master Brad Kramer'] },
 
   { 'key': 'wdm', 'name': 'Clive / West Des Moines', 'short': 'Clive / WDM', 'town': 'Clive',
@@ -40,7 +42,7 @@ BRANCHES = [
     'sched': [('Monday', 'Beginner 6:30 &middot; Advanced 7:30 pm', ''),
               ('Wednesday', 'Advanced 6:30 &ndash; 7:30 pm', ''),
               ('Thursday', 'Beginner 6:00 &middot; Advanced 7:00 pm', '')],
-    'instructors': ['Master Roger Netsch', 'Master Marvin Samuelson', 'Master Lucy Kingsbury'] },
+    'instructors': ['Master Roger Netsch', 'Master Lucy Kingsbury', 'Master Brian Anderson'] },
 
   { 'key': 'carlisle', 'name': 'Carlisle', 'short': 'Carlisle', 'town': 'Carlisle',
     'addr': ['Carlisle Community Building', '35 Vine Street, Carlisle, Iowa 50047'],
@@ -127,6 +129,84 @@ def _price_range():
     hi = max(b['price'] for b in BRANCHES)
     return '$%d' % lo if lo == hi else '$%d&ndash;%d' % (lo, hi)
 
+_DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday',
+         'saturday', 'sunday']
+
+
+def _days_named(label):
+    """['monday'..'thursday'] for a 'Mon - Thu' row, ['sunday'] for 'Sunday'."""
+    hits = [d for d in re.findall(r'mon|tue|wed|thu|fri|sat|sun', label.lower())]
+    full = [next(x for x in _DAYS if x.startswith(h)) for h in hits]
+    if len(full) == 2 and ('ndash' in label or '-' in label or 'to' in label):
+        a, b = (_DAYS.index(x) for x in full)
+        if a < b:
+            return _DAYS[a:b + 1]
+    return full
+
+
+def _check_schedules():
+    """Warn when the summary schedules here drift from schedule.py.
+
+    The branch pages render schedule.py; the homepage cards and the Classes
+    page render the 'sched' rows above. Nothing links the two, so a class added
+    in one place silently goes missing from the other -- which is how the Hub
+    lost its 1st-Sunday brown/black class. Compare clock times per day and say
+    so on stderr; never break the build over it.
+    """
+    import codecs
+    data = {}
+    try:
+        with codecs.open('content/schedule.py', encoding='utf8') as f:
+            exec(f.read(), data)
+    except Exception as e:
+        sys.stderr.write('tr_branches: cannot read schedule.py (%s)\n' % e)
+        return
+
+    # Compare start times and class kinds. End times are deliberately absent
+    # from the card summaries, so comparing every clock token is only noise.
+    kinds = ('brown', 'black', 'kobudo', 'martial spirit', 'tai chi',
+             'beginner', 'advanced')
+
+    def starts(pairs):
+        out = set()
+        for when in pairs:
+            m = re.search(r'\d{1,2}:\d{2}', when)
+            if m:
+                out.add(m.group(0))
+        return out
+
+    def kinds_in(text):
+        t = text.lower().replace('&amp;', '&')
+        return set(k for k in kinds if k in t)
+
+    for b in BRANCHES:
+        page = data.get('context', {}).get(b['page'])
+        if not page:
+            continue
+        theirs, their_kind = {}, {}
+        for row in page.get('class_schedule', []):
+            d = row['day'].lower()
+            theirs.setdefault(d, set()).update(starts(t for _, t in row['classes']))
+            their_kind.setdefault(d, set()).update(
+                kinds_in(' '.join(n for n, _ in row['classes'])))
+        mine, my_kind = {}, {}
+        for label, when, note in b['sched']:
+            for d in _days_named(label):
+                mine.setdefault(d, set()).update(
+                    starts(when.split('&middot;') + [note]))
+                my_kind.setdefault(d, set()).update(kinds_in(when + ' ' + note))
+        for d in _DAYS:
+            for what, a, c in (('times', theirs, mine), ('classes', their_kind, my_kind)):
+                if a.get(d, set()) != c.get(d, set()):
+                    sys.stderr.write(
+                        'tr_branches: %s %s %s -- schedule.py %s, tr_branches %s\n'
+                        % (b['key'], d, what, sorted(a.get(d, ())) or 'nothing',
+                           sorted(c.get(d, ())) or 'nothing'))
+
+
+_check_schedules()
+
+
 TENETS = [
   ('예의', 'Ye Ui', 'Courtesy',
    'Be polite, be fair, and respect the people you train with.'),
@@ -139,6 +219,7 @@ TENETS = [
   ('백절불굴', 'Baekjul Boolgool', 'Indomitable Spirit',
    'Speak and stand for what is right, whatever the odds.'),
 ]
+
 
 context = {
   '*': {

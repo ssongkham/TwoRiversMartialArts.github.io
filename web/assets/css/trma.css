@@ -201,6 +201,12 @@ body.tr {
   position: absolute;
   inset: 0;
 }
+/* The heading's hit area covers the whole card, so any link in the card body
+   has to be lifted above it or it cannot be clicked. */
+.tr-card :is(p, li, dd) a {
+  position: relative;
+  z-index: 1;
+}
 .tr-card:hover h3 a { color: var(--tr-blue-hover); text-decoration-color: currentColor; }
 .tr-branch h3 a:hover { color: var(--tr-blue-hover); text-decoration-color: currentColor; }
 
