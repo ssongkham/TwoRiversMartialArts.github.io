@@ -361,3 +361,108 @@ body.tr main .tr-maplink p { color: var(--tr-ink-2); }
   color: var(--tr-blue) !important;
 }
 .tr-maplink:hover .tr-maplink__cue { color: var(--tr-blue-hover) !important; }
+
+
+/* ---------------------------------------------------------------------------
+   style.css asks for Raleway on 86 selectors and Roboto on 3, and the redesign
+   stopped loading those faces -- so on legacy pages those elements were falling
+   through to the browser's generic sans while everything around them rendered
+   in IBM Plex. Rather than reload the old faces, point them at the redesign's
+   stack. Each selector is prefixed with body.tr so it outranks its counterpart
+   in style.css and applies only on redesign pages.
+   Generated from style.css; regenerate if that file's font rules change.
+   --------------------------------------------------------------------------- */
+body.tr .banner-content h2,
+body.tr .blog-recent .heading h2,
+body.tr .booking-now .bookNow .left-title h4,
+body.tr .carousel-caption h5,
+body.tr .contact-form .drop-line .contact-detail .address h2,
+body.tr .contact-form .drop-line .contact-detail .email h2,
+body.tr .contact-form .drop-line .contact-detail .phone h2,
+body.tr .contact-form .heading h2,
+body.tr .counter-number .heading h2,
+body.tr .footer-bs .footer-content .footer-link h5,
+body.tr .footer-bs .footer-content h2,
+body.tr .image-gallery .heading h2,
+body.tr .lastest-new .heading h2,
+body.tr .lastest-new .program-heading h2,
+body.tr .offer-level .head-title h1,
+body.tr .offer-level .heading h2,
+body.tr .our-instructor .heading h2,
+body.tr .our-instructor .instructor figure.snip1390 h2,
+body.tr .parallax-banner .heading h2,
+body.tr .philosophy-content .heading h2,
+body.tr .philosophy-content .heading h5,
+body.tr .portfolio-content .heading h2,
+body.tr .portfolio-content .program-gallery-heading h2,
+body.tr .signup .signUpForm h2,
+body.tr .testimonial-content .heading h2,
+body.tr .training-content .heading h2,
+body.tr .training-content .trainer .heading-title h2,
+body.tr .training-content .trainer .prom h3,
+body.tr .video-content .heading h2,
+body.tr .weapon .heading h2,
+body.tr .weapon-content .weapon-title h2,
+body.tr h1,
+body.tr h2,
+body.tr h3,
+body.tr h4,
+body.tr h5,
+body.tr h6 {
+  font-family: var(--tr-display);
+}
+
+body.tr .accordion a,
+body.tr .accordion li p,
+body.tr .banner-content p,
+body.tr .blog-recent .blog-article .card .links .comment-link,
+body.tr .blog-recent .blog-article .card .links .date-link,
+body.tr .blog-recent .blog-article .card .links .name-link,
+body.tr .blog-recent .blog-article .card .linktitle h2 a,
+body.tr .blog-recent .heading small,
+body.tr .btn-header,
+body.tr .btn-header-active,
+body.tr .carousel-caption p,
+body.tr .contact-form .heading small,
+body.tr .counter-number .counterNumber .counters .counter,
+body.tr .counter-number .counterNumber .counters figure,
+body.tr .counter-number .heading p,
+body.tr .fc-agendaDay-button,
+body.tr .fc-agendaWeek-button,
+body.tr .fc-day-header span,
+body.tr .fc-event-container .fc-day-grid-event,
+body.tr .fc-event-container .fc-time-grid-event,
+body.tr .fc-listWeek-button,
+body.tr .fc-month-button,
+body.tr .fc-state-active,
+body.tr .fc-today-button,
+body.tr .footer-bs .copyright p,
+body.tr .footer-bs .footer-content .footer-about p,
+body.tr .footer-bs .footer-content .footer-link ul li a,
+body.tr .image-gallery .heading small,
+body.tr .instructor-detail .card .bio p,
+body.tr .instructor-detail .card .name p,
+body.tr .lastest-new .lastest-blog .card-blog-lastest .lastest-detail a,
+body.tr .lastest-new .lastest-blog .card-blog-lastest h3 a,
+body.tr .navbar-expand-lg .navbar-nav .nav-item a,
+body.tr .offer-level .head-title h1 span,
+body.tr .offer-level .title p,
+body.tr .our-instructor .heading small,
+body.tr .parallax-banner .donation-detail .donation,
+body.tr .parallax-banner .price-detail .price,
+body.tr .philosophy-content .title p,
+body.tr .portfolio-content .heading small,
+body.tr .portfolio-content .list-filter,
+body.tr .scrolled .navbar-nav .nav-item a,
+body.tr .sidebar-left .nav-sideleft a,
+body.tr .testimonial-content .testimonial p,
+body.tr .top-area .area-nav .top-left li p,
+body.tr .top-area .area-nav .top-right a,
+body.tr .training-content .heading small,
+body.tr .training-content .trainer .title p,
+body.tr .video-content .heading small,
+body.tr body,
+body.tr html,
+body.tr p {
+  font-family: var(--tr-body);
+}
