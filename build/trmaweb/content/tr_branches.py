@@ -104,23 +104,24 @@ def _per_person():
         out.append('$%d' % lo if lo == hi else '$%d&ndash;%d' % (lo, hi))
     return out
 
+# Descriptions are the club's own, from the pre-redesign homepage. 'note' is
+# ours: where and when the class runs, taken from the schedule.
 PROGRAMMES = [
   { 'name': 'Tae Kwon Do', 'page': 'curriculum.html', 'frag': '',
     'note': 'All six branches',
-    'body': 'The main program, taught at every branch: forms, sparring, '
-            'self-defense and breaking, in the traditional ITF curriculum.' },
+    'body': 'To try out our club and the art of Tae Kwon Do, just come to a '
+            'few classes!' },
   { 'name': 'Martial Spirit', 'page': 'martial-spirit.html', 'frag': '',
     'note': 'Hub &middot; Sundays 9:30 am',
-    'body': 'A Sunday-morning class at the Hub for students who want to go '
-            'deeper into the art beyond the standard curriculum.' },
+    'body': 'This is a formal martial art class that can be started at any '
+            'time.' },
   { 'name': 'Kobudo', 'page': 'kobudo.html', 'frag': '',
     'note': 'Hub &middot; Sundays 12:00 pm',
-    'body': 'Traditional Okinawan weapons &mdash; bo, sai, tonfa and others '
-            '&mdash; taught alongside the empty-hand curriculum.' },
+    'body': 'Kobudo is an ancient art of Okinawan Weaponry.' },
   { 'name': 'Self Defense', 'page': 'curriculum.html', 'frag': '#self-defense',
     'note': 'Part of the Tae Kwon Do class',
-    'body': 'Our own curriculum, written by Master Brad Deaton, to give younger '
-            'students ways to defuse a threatening situation without using force.' },
+    'body': 'Two Rivers Martial Arts Self Defense curriculum was created by '
+            'Master Deaton.' },
 ]
 
 def _price_range():
