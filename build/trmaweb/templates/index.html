@@ -3,6 +3,14 @@
 {% block title %}Two Rivers Martial Arts &mdash; Traditional Tae Kwon Do in Central Iowa{% endblock %}
 
 {% block content %}
+{% macro person(p) %}<div class="tr-person">
+            <img src={{linkto(p['img'])}} alt="{{ p['alt'] }}" loading="lazy" width="108" height="130">
+            <div>
+              <h3>{% if p['anchor'] %}<a href="{{ pathto("instructors-primary.html") }}#{{ p['anchor'] }}">{{ p['name'] }}</a>{% else %}{{ p['name'] }}{% endif %}</h3>
+              <p class="tr-dan">{{ p['dan'] }}</p>
+              <p class="tr-bio">{{ p['bio'] }}</p>
+            </div>
+          </div>{% endmacro %}
 
     <!-- hero -->
     <div class="tr-hero">
@@ -153,6 +161,32 @@
             <span>Families train together in the same class. There is no upper limit, and never
               has been.</span>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- grand masters and masters -->
+    <div class="tr-section">
+      <div class="tr-wrap">
+        <div class="tr-sechead">
+          <div>
+            <p class="tr-eyebrow">Staff</p>
+            <h2>Our Grand Masters</h2>
+          </div>
+          <a class="tr-more" href={{linkto("instructors-primary.html")}}>All instructors &rarr;</a>
+        </div>
+        <div class="tr-people">
+          {% for p in GRANDMASTERS %}{{ person(p) }}{% endfor %}
+        </div>
+
+        <div class="tr-sechead" style="margin-top: 54px;">
+          <div>
+            <p class="tr-eyebrow">Staff</p>
+            <h2>Our Masters</h2>
+          </div>
+        </div>
+        <div class="tr-people">
+          {% for p in MASTERS %}{{ person(p) }}{% endfor %}
         </div>
       </div>
     </div>
