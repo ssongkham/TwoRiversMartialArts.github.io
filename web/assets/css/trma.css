@@ -143,7 +143,7 @@ body.tr {
 
 /* ------------------------------------------------------------- tenets band */
 /* --------------------------------------- latest news, directly below the hero */
-.tr-newsband { margin-top: 36px; }
+.tr-newsband { margin-top: 64px; }
 .tr-newsband .tr-label { margin-bottom: 14px; }
 .tr-newsband__items {
   display: grid;
