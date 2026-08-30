@@ -20,6 +20,16 @@
       </div>
     </div>
 
+    <!-- latest news -->
+    <div class="tr-newsband">
+      <div class="tr-wrap">
+        <p class="tr-label">Latest news</p>
+        <div class="tr-newsband__items">
+{{ latest_news }}
+        </div>
+      </div>
+    </div>
+
     {{ tr_tenets_band }}
 
     <!-- our beginning -->
@@ -86,8 +96,7 @@
     <!-- a club, not a business -->
     <div class="tr-section">
       <div class="tr-wrap">
-        <div class="tr-grid">
-          <div class="tr-c7">
+        <div style="max-width: 62ch;">
             <h2>A club, not a business</h2>
             <div class="tr-prose" style="margin-top: 22px;">
               <p>Two Rivers is a nonprofit run by its own members. Every instructor is a
@@ -96,14 +105,6 @@
                 is why they are twenty-five dollars.</p>
               <p>There are no contracts, no belt-testing packages, and no upgrade path to a more
                 expensive class. We still teach it the way it was handed to us.</p>
-            </div>
-          </div>
-          <div class="tr-c5">
-            <div class="tr-aside" style="margin-top: 0;">
-              <p class="tr-label">Latest news</p>
-              <div style="margin-top: 16px;">
-                {{ latest_news }}
-              </div>
             </div>
           </div>
         </div>
